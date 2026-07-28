@@ -1,6 +1,6 @@
 cask "wiles" do
   version "0.0.2"
-  sha256 "dff91fdc48bf0d1b3df2ee9414b95aca2d16f23ed0f7af5bbb0216ba154b189c"
+  sha256 "bfed386d78720eb1451b721346a0476c582a5c2193d3bc96aaa8eb16bb162ffc"
 
   url "https://raw.githubusercontent.com/marcops/wiles/main/releases/wiles-v#{version}.zip"
   name "Wiles"
@@ -10,6 +10,12 @@ cask "wiles" do
   depends_on macos: :sonoma
 
   app "Wiles.app"
+
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/Wiles.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Preferences/com.wiles.app.plist",
