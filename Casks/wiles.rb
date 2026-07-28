@@ -1,10 +1,10 @@
 cask "wiles" do
   version "0.0.2"
-  sha256 "bfed386d78720eb1451b721346a0476c582a5c2193d3bc96aaa8eb16bb162ffc"
+  sha256 "dff91fdc48bf0d1b3df2ee9414b95aca2d16f23ed0f7af5bbb0216ba154b189c"
 
   url "https://raw.githubusercontent.com/marcops/wiles/main/releases/wiles-v#{version}.zip"
   name "Wiles"
-  desc "Ultra-fast modern macOS File Manager inspired by Nautilus & Windows Explorer"
+  desc "Ultra-fast modern macOS File Manager"
   homepage "https://github.com/marcops/wiles"
 
   depends_on macos: :sonoma
