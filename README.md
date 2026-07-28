@@ -1,10 +1,6 @@
 # 📂 Wiles
 
 <p align="center">
-  <img src="Sources/Wiles/Resources/AppIcon.png" width="128" height="128" alt="Wiles App Icon" />
-</p>
-
-<p align="center">
   <b>A fast, native macOS file manager bridging the elegance of GNOME Files with macOS Finder.</b>
 </p>
 
@@ -25,30 +21,13 @@
 
 ---
 
-## 🚀 Installation
+## 🍺 Installation via Homebrew
 
-### Via Homebrew
-
-Install Wiles using the official Cask tap:
+Install Wiles on macOS:
 
 ```bash
 brew tap marcops/wiles git@github.com:marcops/wiles.git
 brew install --cask wiles
-```
-
-### Building from Source
-
-Requirements: macOS 14.0+ & Swift 6.0+
-
-```bash
-git clone git@github.com:marcops/wiles-source.git wiles
-cd wiles
-swift build -c release
-```
-
-Launch the built app:
-```bash
-open .build/release/Wiles
 ```
 
 ---
