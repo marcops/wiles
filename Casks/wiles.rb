@@ -7,7 +7,7 @@ cask "wiles" do
   desc "Ultra-fast modern macOS File Manager inspired by Nautilus & Windows Explorer"
   homepage "https://github.com/marcops/wiles"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Wiles.app"
 
