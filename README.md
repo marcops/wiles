@@ -6,6 +6,19 @@
 
 ---
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/screenshot-1.png" width="80%"/>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/screenshot-2.png" width="48%"/>
+  <img src="docs/screenshots/screenshot-3.png" width="48%"/>
+</p>
+
+---
+
 ## ✨ Features
 
 - 🌲 **Flexible Sidebar Modes**: Switch between standard **Places** and a full **Directory Tree** with expandable folder nodes.
