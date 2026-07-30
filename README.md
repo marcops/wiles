@@ -9,7 +9,7 @@ A fast, native macOS file manager designed for speed, bridging the best of **GNO
 ## ⚡️ Quick Install (Homebrew & Direct DMG)
 
 ### Option 1: Direct DMG Download (GUI)
-Download **[wiles-v0.0.4.dmg](https://raw.githubusercontent.com/marcops/wiles/main/releases/wiles-v0.0.4.dmg)**, open it, and drag `Wiles.app` to `/Applications`.
+Download the **[Latest Release DMG](https://github.com/marcops/wiles/releases/latest)**, open it, and drag `Wiles.app` to `/Applications`.
 
 ### Option 2: Homebrew Cask Terminal
 ```bash
