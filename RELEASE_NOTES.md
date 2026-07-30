@@ -1,5 +1,31 @@
 # Release Notes
 
+## Version 0.0.6
+**Network, Security & Quality Assurance Release**
+
+### New Features:
+- **Wi-Fi Folder Sharing**: Instantly share any folder over your local network via a built-in HTTP server (no third-party apps required). Access shared folders from any browser on the same Wi-Fi. Copy the URL with one click.
+- **Bonjour Network Discovery**: Automatically discovers SMB/AFP shares and Bonjour services on your local network. New collapsible **NETWORK & CLOUD** section in the sidebar (toggle via View menu).
+- **Folder Auto-Organization**: Define rules to automatically route files to target folders by extension (e.g., all `.pdf` → `~/Documents/PDFs`). Rules are persisted and run in the background.
+- **Network & Cloud Toggle**: Show/hide the Network & Cloud sidebar section via View → Show Network & Cloud (off by default for a clean UI).
+
+### Quality & Testing:
+- **Comprehensive Automated Test Suite**: 50 automated tests across 15 modular test suites covering every core subsystem:
+  - Navigation, Favorites, UI/PathBar, UI/ContextMenu, UI/ViewMode, Localization
+  - FileSystem, ZipArchive, BatchRename, FileShredder, SymlinkService, UndoRedo
+  - LocalHttpServer (including path traversal security blocking)
+  - AutoOrganization, NewFileTemplate, DiskSpaceVisualizer, ImageConverter, NetworkDiscovery
+- **Security Fix**: HTTP folder sharing now blocks directory traversal attacks (`/../etc/passwd` → 403 Forbidden).
+- **Archive Fix**: ZIP extraction now correctly detects and throws errors on corrupt/invalid archives.
+- Run the full test suite with: `swift run Wiles --test`
+
+### Improvements:
+- Help sheet updated with Wi-Fi Folder Sharing and Auto-Organization documentation.
+- All new features fully localized in English, Portuguese, Spanish, French, and German.
+
+---
+
+
 ## Version 0.0.5
 **First Major Public Release**
 
