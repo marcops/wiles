@@ -8,7 +8,7 @@ A fast, native macOS file manager designed for speed, bridging the best of **GNO
 
 ## 🆕 What's New
 Check out the latest features and updates in our Release Notes!
-👉 **[Read the Release Notes (v0.0.5)](RELEASE_NOTES.md)**
+👉 **[Read the Release Notes](RELEASE_NOTES.md)**
 
 ---
 
