@@ -55,14 +55,6 @@ brew upgrade --cask wiles
 
 ---
 
-## 📸 Screenshots
-
-| Grid View | List View |
-| :---: | :---: |
-| <img src="docs/screenshots/v0.0.9-grid.png" width="100%"/> | <img src="docs/screenshots/v0.0.9-list.png" width="100%"/> |
-
----
-
 ## ⌨️ Shortcuts Cheatsheet
 
 | Action | Shortcut |
