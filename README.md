@@ -2,7 +2,7 @@
 
 A fast, native macOS file manager designed for speed, bridging the best of **GNOME Files (Nautilus)** and **macOS Finder**.
 
-![Wiles Screenshot](docs/screenshots/screenshot-1.png)
+![Wiles Screenshot](docs/screenshots/v0.0.9-hero.png)
 
 ---
 
@@ -59,7 +59,7 @@ brew upgrade --cask wiles
 
 | Grid View | List View |
 | :---: | :---: |
-| <img src="docs/screenshots/screenshot-2.png" width="100%"/> | <img src="docs/screenshots/screenshot-3.png" width="100%"/> |
+| <img src="docs/screenshots/v0.0.9-grid.png" width="100%"/> | <img src="docs/screenshots/v0.0.9-list.png" width="100%"/> |
 
 ---
 
