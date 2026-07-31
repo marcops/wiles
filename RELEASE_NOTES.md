@@ -1,5 +1,16 @@
 # Release Notes
 
+## Version 0.0.9
+**UX Polish, Unified Locales & List Column Optimization Release**
+
+### Improvements:
+- **Unified Localized Mode Titles**: Standardized sidebar mode titles (`Places & Devices` / `Directory Tree`) across menu bar pickers and section headers in English, Portuguese, Spanish, French, and German.
+- **View Switcher Button Styling**: Fixed collapsed button styling in `HeaderBarView` so the view switcher button reverts to neutral background styling when collapsed.
+- **List Column Defaults & Last Column Resizing**: Updated default visible list columns to Name, Size, and Date Modified (hiding Kind by default), and enabled interactive column resize handles on all visible columns including the last column.
+- **Zero Startup Permission Dialogs**: Eliminated proactive background directory probing on startup to ensure Wiles launches immediately without permission prompts, adding a direct "Grant Full Disk Access..." menu item.
+
+---
+
 ## Version 0.0.8
 **Permission Management & Startup Optimization Release**
 
