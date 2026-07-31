@@ -1,5 +1,36 @@
 # Release Notes
 
+## Version 0.0.10
+**Keyboard Arrow Navigation & List View Scroll Fix Release**
+
+### New Features:
+- **Arrow Key Navigation**: Full keyboard navigation is now supported in both Grid View and List View:
+  - `↑` / `↓` — Move selection up and down through files and folders.
+  - `←` — Navigate to the parent directory (List View) / move selection left by one column (Grid View).
+  - `→` — Enter the selected folder (List View) / move selection right by one column (Grid View).
+  - `⇧ + ↑ / ↓` — Extend the current selection range (multi-select with keyboard).
+
+### Bug Fixes:
+- **List View Horizontal Scroll**: The horizontal scrollbar no longer appears persistently when columns fit the window. It now only becomes visible when column widths genuinely exceed the available view width.
+- **List View Vertical Whitespace**: Eliminated excessive blank space at the bottom of the List View caused by a hardcoded 600pt minimum height on the scroll content. The vertical scroll area now tracks actual content height accurately.
+- **UserDefaults View Mode Restore**: Fixed an edge case where a late `UserDefaults` write during `AppState` initialization could overwrite the persisted `viewMode`, causing the app to always restart in Grid View regardless of the user's last preference.
+
+### Quality & Testing:
+- **8 new automated tests** added in `ArrowKeyNavigationTests`:
+  - `↓` moves selection to next item
+  - `↑` moves selection to previous item
+  - Boundary clamping: `↓` at last item stays on last item; `↑` at first item stays on first item
+  - Empty-selection start: `↓` with no prior selection selects the first item
+  - `Shift+↓` extends range selection correctly
+  - `→` navigates into the selected directory in List View
+  - `←` invokes `goUp()` to navigate to the parent directory
+  - Default columns (Name, Size, Date Modified) verified
+- **Full test suite: 80 Passed, 0 Failed** (`swift run Wiles --test`)
+
+---
+
+
+
 ## Version 0.0.9
 **UX Polish, Unified Locales & List Column Optimization Release**
 
