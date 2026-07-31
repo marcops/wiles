@@ -1,5 +1,15 @@
 # Release Notes
 
+## Version 0.0.8
+**Permission Management & Startup Optimization Release**
+
+### Improvements:
+- **Single-Batch Initial Permissions**: Grouped all standard user folder permission requests (`Desktop`, `Documents`, `Downloads`, `Music`, `Pictures`, `Movies`) into a single batch on initial app launch.
+- **Zero Startup Interruptions**: Implemented `UserDefaults` persistence (`wiles_hasRequestedInitialPermissions`) to ensure initial permission logic runs strictly once on first launch and never again on subsequent app starts.
+- **Automated Test Coverage**: Added dedicated `PermissionTests` suite verifying initial state execution, persistence guardrails, and return behavior.
+
+---
+
 ## Version 0.0.7
 **UI Testing Architecture & Sandboxed Paths Release**
 
