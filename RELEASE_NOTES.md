@@ -1,5 +1,15 @@
 # Release Notes
 
+## Version 0.0.7
+**UI Testing Architecture & Sandboxed Paths Release**
+
+### Improvements:
+- **UI Testing Sandboxed Paths**: Migrated all automated UI test temporary workspaces to system `NSTemporaryDirectory()` for complete path portability and clean host isolation.
+- **Bundle & Asset Optimization**: Rebuilt native app bundle with complete resource bundle structures (`Wiles_Wiles.bundle`), updated app versioning (0.0.7), and validated asset resources.
+- **XCUITest Focus & Stability**: Enhanced UI test input focus handling and automated `--ui-testing` environment flags across search, navigation, and file operations test suites.
+
+---
+
 ## Version 0.0.6
 **Network, Security & Quality Assurance Release**
 
