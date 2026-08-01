@@ -1,5 +1,21 @@
 # Release Notes
 
+## Version 0.1.2
+**Sidebar Click Fix Release**
+
+### Bug Fixes:
+- **Favorites Header Click**: Clicking the Favorites section header in the
+  sidebar sometimes maximized/zoomed the window instead of expanding or
+  collapsing the section. The double-click-to-zoom hit area near the
+  traffic-light buttons was taller than the empty space reserved above the
+  sidebar's first row, so it overlapped the Favorites header. The zoom zone
+  now matches the empty inset exactly, and no longer intercepts clicks on
+  section headers.
+
+---
+
+
+
 ## Version 0.1.1
 **Transparency Menu & Right-Click Menu Cleanup Release**
 
