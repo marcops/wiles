@@ -1,5 +1,44 @@
 # Release Notes
 
+## Version 0.1.0
+**Menu Bar Overhaul, Appearance Themes & Real Thumbnail Previews Release**
+
+### New Features:
+- **Restructured Menu Bar**: Split the single sprawling menu into proper native
+  App, File, Edit, View, Go, Tools, and Help menus, matching macOS conventions.
+- **Appearance Theme Picker**: Choose System, Light, or Dark appearance from
+  the App menu, independent of the macOS system-wide setting.
+- **Sort By Menu**: New View > Sort By submenu (Name, Size, Date Modified,
+  Kind) with an ascending/descending toggle.
+- **Undo / Redo**: File operations (move, rename, delete, etc.) can now be
+  undone and redone from the Edit menu or `Cmd+Z` / `Cmd+Shift+Z`.
+- **Real Image Thumbnails in Grid View**: Image files now show an actual
+  rendered thumbnail instead of a generic file icon, loaded asynchronously
+  and cached.
+- **Quick Look & Open from the File Menu**: Added dedicated File > Open and
+  File > Quick Look menu items alongside their existing shortcuts.
+
+### Bug Fixes:
+- **Sidebar Double-Click to Zoom**: Double-clicking the empty space at the
+  top of the sidebar (next to the native traffic-light buttons) now
+  reliably zooms/restores the window; it previously did nothing because the
+  scrollable sidebar list was swallowing the click before it reached the
+  zoom gesture.
+- **Path Bar Breadcrumb Scrolling**: Hovering a long breadcrumb path now
+  reliably scrolls to reveal the end of the path. The scroll used to
+  silently fail because each segment was assigned a new random identifier
+  on every redraw, so the app could never find the segment it was trying
+  to scroll to.
+- **Auto-Hiding Grid Scrollbars**: Grid View scrollbars now auto-hide like
+  every other native AppKit scroll view instead of staying permanently
+  visible.
+- Initial permission request dialogs are now shown in the user's selected
+  app language instead of always in English.
+
+---
+
+
+
 ## Version 0.0.10
 **Keyboard Arrow Navigation & List View Scroll Fix Release**
 
