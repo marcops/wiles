@@ -1,5 +1,32 @@
 # Release Notes
 
+## Version 0.1.1
+**Transparency Menu & Right-Click Menu Cleanup Release**
+
+### New Features:
+- **Unified Transparency Menu**: Sidebar and Content translucency pickers are
+  now grouped under a single App > Transparency menu instead of two separate
+  top-level entries.
+
+### Bug Fixes:
+- **Select All (Cmd+A)**: Fixed a shortcut conflict where the system's
+  default (inactive) Select All menu item silently absorbed `Cmd+A` before
+  it could reach the app's own handler, so selecting all items never worked.
+- **Deprecated Share API**: Replaced a deprecated `NSSharingService`
+  enumeration (flagged by the OS as unavailable since macOS 13) with the
+  native SwiftUI `ShareLink` in the file context menu.
+
+### UI Refinements:
+- Removed "Sort By", "View Mode", "Show Hidden Files", and "Refresh" from
+  the background right-click menu, leaving only the actions specific to
+  that context.
+- Grid View icons are now larger and use more of the available card space.
+- Restored the large photo icon next to the footer's icon-size slider.
+
+---
+
+
+
 ## Version 0.1.0
 **Menu Bar Overhaul, Appearance Themes & Real Thumbnail Previews Release**
 
