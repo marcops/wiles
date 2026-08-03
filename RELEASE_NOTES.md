@@ -1,16 +1,19 @@
 # Release Notes
 
 ## Version 0.1.2
-**Sidebar Click Fix Release**
+**Performance, Lazy Loading, and Premium HUD Release**
 
-### Bug Fixes:
-- **Favorites Header Click**: Clicking the Favorites section header in the
-  sidebar sometimes maximized/zoomed the window instead of expanding or
-  collapsing the section. The double-click-to-zoom hit area near the
-  traffic-light buttons was taller than the empty space reserved above the
-  sidebar's first row, so it overlapped the Favorites header. The zoom zone
-  now matches the empty inset exactly, and no longer intercepts clicks on
-  section headers.
+### New Features:
+- **Unified Lazy Loading**: Enhanced performance across grid, list, and column views by loading items in optimized chunks of 5,000 items.
+- **Shortcuts Cheatsheet HUD**: A beautiful, glassmorphic HUD panel (triggered via `Cmd + /` or the Tools menu) displaying contextual shortcuts matching your active navigation mode (macOS vs Gnome).
+- **Standalone Recents Item**: Added a dedicated, standalone Recents sidebar item pointing to a virtual view displaying the top 50 recently accessed items.
+- **Trash Space Indicator & Confirmation**: View real-time disk space consumed by the Trash in the sidebar, with asynchronous loading indicators and a clean confirmation sheet before emptying.
+- **Drag-and-Drop Sidebar Hover Highlights**: Visual spring-animated scaling and accent highlights on sidebar items when dragging files over them.
+
+### Refinements:
+- Decoupled "Show Recents" settings from the MAC section toggle.
+- Full localization (AR, DE, ES, FR, PT, EN) for all new components.
+- Native layout-aware custom mapping for keyboard shortcuts to prevent layout remapping issues.
 
 ---
 
