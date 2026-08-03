@@ -1,6 +1,6 @@
 # Release Notes
 
-## Version 0.1.2
+## Version 0.1.3
 **Performance, Lazy Loading, and Premium HUD Release**
 
 ### New Features:
@@ -14,6 +14,14 @@
 - Decoupled "Show Recents" settings from the MAC section toggle.
 - Full localization (AR, DE, ES, FR, PT, EN) for all new components.
 - Native layout-aware custom mapping for keyboard shortcuts to prevent layout remapping issues.
+
+---
+
+## Version 0.1.2
+**Sidebar Click Fix Release**
+
+### Bug Fixes:
+- **Favorites Header Click**: Clicking the Favorites section header in the sidebar sometimes maximized/zoomed the window instead of expanding or collapsing the section. The double-click-to-zoom hit area near the traffic-light buttons was taller than the empty space reserved above the sidebar's first row, so it overlapped the Favorites header. The zoom zone now matches the empty inset exactly, and no longer intercepts clicks on section headers.
 
 ---
 
