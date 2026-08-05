@@ -1,8 +1,8 @@
 cask "wiles" do
-  version "0.1.3"
-  sha256 "cebab85a3df80e974db57c5e56fd26a065f2f1c10f6f3a214e5f0551dbcf3fdc"
+  version "0.2.0"
+  sha256 "d28f8ea5e5eb3d1658a54024366e5cce7101c734600522f243e70afcf742b814"
 
-  url "https://raw.githubusercontent.com/marcops/wiles/f66ced5ed6ce71f755f68e9cf8729a44d3d2e91f/releases/wiles-v#{version}.zip"
+  url "https://raw.githubusercontent.com/marcops/wiles/831b4edbd7a1acc4f0af5b4b259ebae5d6e0ff52/releases/wiles-v#{version}.zip"
   name "Wiles"
   desc "Ultra-fast modern macOS File Manager"
   homepage "https://github.com/marcops/wiles"
