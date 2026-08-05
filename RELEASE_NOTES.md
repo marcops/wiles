@@ -1,5 +1,30 @@
 # Release Notes
 
+## Version 0.2.1
+**Navigation, Selection & Stability Release**
+
+### Bug Fixes:
+- **Grid View Arrow-Key Navigation**: Up/Down arrows in Grid View were moving the selection sideways instead of vertically — the grid's real column count was never being computed, silently defaulting to 1. Fixed the cell-frame tracking that feeds that calculation.
+- **Selection Lost When Navigating Up**: Going back to a parent folder (or pressing Up) no longer resets selection to the first item — it now restores selection to the child folder you just came from, matching Finder.
+- **List/Column Views No Longer Auto-Select on Open**: Entering a folder in List or Column view used to auto-select the first item; now nothing is selected until you press an arrow key, and the first press selects the right item in the right direction.
+- **Cmd+Z (Undo) Was Silently Broken**: A disabled default macOS "Undo" menu item was competing for the Cmd+Z shortcut and swallowing it before it reached the app. Undo/Redo now work reliably.
+- **Periodic UI Flicker**: Background directory refreshes (via FSEvents) were force-redrawing the entire file list every time, even when nothing actually changed, because file icon objects were being compared by identity. Fixed with a proper equality check that ignores icon identity — redraws now only happen when content genuinely changes.
+- **Mouse Drag-Selection Fixed**: The rectangular marquee selection in Grid/List views wasn't reliably capturing items — related to the same cell-frame tracking bug behind the arrow-key issue.
+- **Search Toggle Button**: Clicking the search icon a second time to close search could silently reopen it instead, due to a race between the button's own toggle and an "outside click closes search" handler that didn't know about the button. Now deterministic.
+- **Terminal Drawer Crash on Fast Open/Close**: Rapidly toggling the integrated terminal could crash the app — the underlying PTY-backed view was being destroyed while its background read thread was still active. The terminal session now persists across toggles; open/close now animates as a proper slide down/up.
+- **Folder Icon During Drag-and-Drop**: Dragging a file over a folder and holding now swaps the folder's icon to the system's "open folder" glyph before it spring-loads open, matching Finder.
+- **Localization Coverage**: Fixed a resource-bundle lookup bug that caused every translated string, in every supported language, to silently fall back to its raw untranslated key inside the test/CI environment — the app itself was unaffected, but this masked real coverage checks.
+
+### Refinements:
+- **Instant Folder Re-Render**: Revisiting an already-loaded folder now shows its cached contents instantly while the real directory listing reconciles in the background — no more empty flash while it reloads.
+- **Restored Pagination for Large Folders**: Folders with more than 500 items load progressively again instead of rendering everything at once.
+- **Thumbnails Generated Once**: Image/video/PDF thumbnails are now generated a single time at a fixed high resolution and cached — zooming the icon size in Grid View no longer triggers repeated thumbnail regeneration.
+- **In-Place Name Expansion**: Selecting a file with a long, truncated name and pausing on it briefly now expands the name in place to show it in full, instead of staying truncated with "…".
+- **Richer File Tooltip**: Hovering an item now shows a short delay before a tooltip with name, kind, size, dates, and (for images/PDFs) dimensions or page count.
+- **Shorter Date Format**: File dates in List View now use the system's short date/time style instead of a long fixed format, so they no longer overflow the column.
+
+---
+
 ## Version 0.1.3
 **Performance, Lazy Loading, and Premium HUD Release**
 
