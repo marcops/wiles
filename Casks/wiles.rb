@@ -1,8 +1,8 @@
 cask "wiles" do
-  version "0.2.1"
-  sha256 "2f3ff6ae8a4d8f44317c0cd6b1b12508ee2a706f8120779a99f128d5e225c52b"
+  version "0.2.2"
+  sha256 "98e1ef760c3a790d3de9d628360533227bd480ccf94d25c96762f832c9cc46f0"
 
-  url "https://raw.githubusercontent.com/marcops/wiles/main/releases/wiles-v#{version}.zip"
+  url "https://raw.githubusercontent.com/marcops/wiles/1f008fb3ee02216f67af68e57b9873ec9f96acd6/releases/wiles-v#{version}.zip"
   name "Wiles"
   desc "Ultra-fast modern macOS File Manager"
   homepage "https://github.com/marcops/wiles"
@@ -18,7 +18,8 @@ cask "wiles" do
   end
 
   zap trash: [
-    "~/Library/Preferences/com.wiles.app.plist",
-    "~/Library/Saved Application State/com.wiles.app.savedState",
+    "~/Library/Preferences/com.marco.wiles.plist",
+    "~/Library/Saved Application State/com.marco.wiles.savedState",
+    "~/Library/Caches/Wiles",
   ]
 end
