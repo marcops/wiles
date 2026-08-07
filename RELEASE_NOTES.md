@@ -1,5 +1,27 @@
 # Release Notes
 
+## Version 0.2.2
+**Stability & Security Hardening Release**
+
+### Security Fixes:
+- **Terminal Directory-Name Command Injection**: Opening the integrated terminal in (or navigating into) a folder with a maliciously crafted name could execute arbitrary shell commands automatically, with no confirmation. Directory paths sent to the terminal are now properly shell-escaped.
+- **Smart Folder Search Crash/Corruption**: A search query containing certain special characters could corrupt Smart Folder queries or crash the app. Queries are now passed as safe arguments instead of being interpolated into the query itself.
+
+### Bug Fixes:
+- **Undo/Redo Reliability**: A failed undo (e.g. the file was already moved or deleted outside the app) used to fail silently and could corrupt the redo history. Undo/Redo failures now surface a clear error and never corrupt history.
+- **Duplicate Cleaner No Longer Hangs on Cancel**: Closing the Duplicate Finder mid-scan now stops the scan immediately instead of continuing in the background.
+- **Local Web Share Stability**: Fixed a rare crash risk when starting/stopping the local HTTP file-sharing server while a transfer was in progress.
+- **File Column View Stale Content**: Rapidly navigating between folders in Column View could briefly show a previous folder's contents. Fixed.
+- **Auto-Organization No Longer Freezes the UI**: Rules that move large files (especially to an external drive) now run fully in the background instead of blocking the window.
+- **Smart Folders / Notification Leak**: Repeated Smart Folder searches no longer leak internal observers, which previously caused results to duplicate over a long session.
+
+### Performance:
+- **Faster, Lighter Everywhere**: Image previews, PDF page counts, file properties, and directory listings now avoid redundant disk reads and stay off the main thread — smoother scrolling and snappier UI on large folders and slow/network volumes.
+- **Bounded Memory Everywhere**: Navigation history, expanded-folder state, and file-tooltip caches are now capped instead of growing without limit over a long session.
+- **Column Resizing**: Dragging a column border no longer re-saves your layout on every pixel of movement — only once you release.
+
+---
+
 ## Version 0.2.1
 **Navigation, Selection & Stability Release**
 
