@@ -1,5 +1,20 @@
 # Release Notes
 
+## Version 0.3.3
+**Column View Reliability Release**
+
+### New Features:
+- **Column View Now Matches List and Grid**: Multi-select and right-click now work the same way in Column view as they already did everywhere else.
+- **New File Menu Item**: The File menu had "New Folder" but no "New File" — added.
+
+### Bug Fixes:
+- **Shift+Arrow Selection Could Select the Wrong Files**: Extending a selection with Shift+Arrow sometimes jumped from the wrong starting point. It now anchors correctly, including in Column view, and the window scrolls to follow your selection.
+- **New Folder/File in Column View Could Land in the Wrong Column**: Creating a new item in Column view could appear in a different column than the one you right-clicked, or lose its rename box if the folder happened to refresh at the same moment. Fixed.
+- **Cut/Copy/Paste/Select All Could Break While Renaming**: These shortcuts could stop working correctly while a rename box was open. Fixed.
+- **New Folder/New File No Longer Use a Popup Dialog**: Both now create the item instantly and let you type its name right there, instead of interrupting you with a dialog box.
+
+---
+
 ## Version 0.3.2
 **Rename & Keyboard Reliability Release**
 
