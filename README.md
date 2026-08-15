@@ -19,7 +19,7 @@ Check out the latest features and updates in our Release Notes!
 ## ⚡️ Quick Install (Homebrew & Direct DMG)
 
 ### Option 1: Direct DMG Download (GUI)
-Download the **[Latest Release DMG](https://github.com/marcops/wiles/tree/main/releases)**, open it, and drag `Wiles.app` to `/Applications`.
+Download the **[Latest Release DMG](https://github.com/marcops/wiles/releases/latest)**, open it, and drag `Wiles.app` to `/Applications`.
 
 ### Option 2: Homebrew Cask Terminal
 ```bash
