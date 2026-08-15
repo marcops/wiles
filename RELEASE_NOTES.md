@@ -1,5 +1,13 @@
 # Release Notes
 
+## Version 0.3.4
+**Archive Extraction Reliability Release**
+
+### Bug Fixes:
+- **Extracting a File From an Archive to an External Drive or Network Location Could Fail**: Pulling a single file out of a Zip (or similar archive) via the archive inspector could silently fail when the destination was on an external drive, network share, or other separate volume. Fixed.
+
+---
+
 ## Version 0.3.3
 **Column View Reliability Release**
 
