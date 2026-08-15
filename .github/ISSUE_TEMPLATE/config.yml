@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions / Ideas
+    url: https://github.com/marcops/wiles/discussions
+    about: Ask questions, share ideas, or discuss features with the community.
