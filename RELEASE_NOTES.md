@@ -1,5 +1,13 @@
 # Release Notes
 
+## Version 0.3.5
+**Search Bar Fix Release**
+
+### Bug Fixes:
+- **Search Field Was Too Narrow**: The search box in the header didn't expand to use the available space, making it harder to see what you typed. Fixed.
+
+---
+
 ## Version 0.3.4
 **Archive Extraction Reliability Release**
 
@@ -46,25 +54,6 @@
 ### Refinements:
 - **Better VoiceOver Support**: Added missing accessibility labels to the Wi-Fi Sharing and Archive Inspection windows.
 - **Smoother "Whole Mac" Search in Column View**: Fixed a minor animation glitch that could occur when a lot of search results loaded at once in Column view.
-
----
-
-## Version 0.3.0
-**Rename, Search & Polish Release**
-
-### New Features:
-- **Rename Directly In Place**: Renaming a file or folder now edits the name right where it sits — in Grid, List, and Column view — instead of popping up a separate dialog. Click an already-selected item, press Return/F2, or use the right-click menu; press Return to confirm, Escape to cancel, or click away to exit.
-- **"Whole Mac" Search**: A new toggle inside the search bar searches your entire home folder recursively instead of just the current one, with results streaming in as they're found. Hidden folders are skipped by default (toggle "Include Hidden Folders" in the search filter menu to include them).
-- **Finder-Style Long Name Truncation**: Long file names now wrap to two lines in Grid view, and only get truncated in the middle (keeping both the start and the file extension visible) when they still don't fit — matching Finder, instead of just cutting off the end. Toggle it off in Settings → Advanced if you prefer the old behavior.
-- **Smooth Row Removal**: Deleting a file in List, Grid, or Column view now animates the remaining rows sliding into place instead of popping instantly.
-
-### Bug Fixes:
-- **Trash Wasn't Opening**: Clicking Trash in the sidebar showed an empty folder with no explanation. Wiles now detects when a folder needs Full Disk Access and shows a clear prompt with a button straight to System Settings, instead of silently showing nothing.
-- **System Theme Wasn't Applying Live**: Switching Appearance to "System" in Settings updated the Settings window but not the main window behind it until you picked Light or Dark explicitly. Fixed.
-- **Delete Confirmation Needed a Mouse Click**: The Move to Trash/Empty Trash confirmation didn't respond to pressing Return, and used non-standard red styling. It now responds to Return like every other macOS dialog.
-- **Scrolling Broken in Properties and Shortcuts**: Mouse-wheel scrolling didn't work in the file Properties panel or the Shortcuts cheatsheet (Help → Shortcuts). Fixed, and the Properties panel now respects Dark Mode throughout.
-- **Column View Search**: Searching while in Column view previously showed nothing at all. It now shows results like List and Grid.
-- **"Show Tags" Setting Relocated**: Moved from Advanced settings into the Sidebar settings tab and the sidebar's own menu, where it actually belongs.
 
 ---
 
@@ -135,6 +124,7 @@
 
 Full detail only sticks around for the 5 most recent versions — everything older collapses here, down to just the features that mattered:
 
+- **Rename directly in place, "Whole Mac" search & Finder-style truncation** *(0.3.0)*: Renaming edits the name right where it sits, a new search toggle searches your whole home folder recursively, and long file names truncate in the middle like Finder.
 - **Transparency controls** *(0.1.1)*: Sidebar and window transparency, adjustable from one place in the menu bar.
 - **Menu bar overhaul & appearance themes** *(0.1.0)*: Proper native menus, a Light/Dark/System appearance picker independent of your Mac's setting, real image thumbnails in Grid view, and Undo/Redo for file operations.
 - **Full keyboard navigation** *(0.0.10)*: Move around and select files entirely from the arrow keys, no mouse required.
