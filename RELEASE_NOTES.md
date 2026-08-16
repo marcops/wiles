@@ -1,5 +1,16 @@
 # Release Notes
 
+## Version 0.3.6
+**Folder Picker Overhaul**
+
+### Refinements:
+- **Choose Folder Now Shows Your Favorites and Browses Fully**: The folder picker used in Auto-Organization Rules now shows your actual sidebar Favorites (hidden if you don't have any saved), and its folder tree can now be expanded all the way down instead of stopping after one level.
+- **Type or Click to Pick a Folder**: The folder path now sits at the top of the picker and can be typed directly — Wiles checks it's a real folder before accepting it — or set by clicking through the tree, which scrolls to keep your selection in view.
+- **Folders Without Subfolders No Longer Show a Misleading Expand Arrow**.
+- **Tidier Add Rule Row**: The folder buttons in "Add New Rule" are wider and left-align long names instead of centering and truncating them awkwardly, and the extension field is now sized for what people actually type.
+
+---
+
 ## Version 0.3.5
 **Search Bar Fix Release**
 
@@ -103,28 +114,12 @@
 
 ---
 
-## Version 0.1.3
-**Performance & Shortcuts Release**
-
-### New Features:
-- **Faster Large Folders**: Grid, List, and Column views all load big folders in smooth batches instead of all at once, so huge folders open quickly.
-- **Shortcuts Cheatsheet**: A quick-reference panel (`Cmd + /` or the Tools menu) showing the shortcuts for whichever navigation style you use — Classic or Quick.
-- **Standalone Recents Item**: A dedicated Recents item in the sidebar, showing your 50 most recently opened items.
-- **Trash Space Indicator & Confirmation**: See how much disk space the Trash is using right in the sidebar, with a clean confirmation before you empty it.
-- **Drag-and-Drop Sidebar Highlights**: Sidebar items now visibly light up with a subtle animation when you drag files over them.
-
-### Refinements:
-- "Show Recents" is now its own setting instead of being tied to the Mac section toggle.
-- All of the above is fully available in English, Arabic, German, Spanish, French, and Portuguese.
-- Keyboard shortcuts now stay correctly mapped regardless of your keyboard layout.
-
----
-
 ## Earlier Highlights
 
 Full detail only sticks around for the 5 most recent versions — everything older collapses here, down to just the features that mattered:
 
 - **Rename directly in place, "Whole Mac" search & Finder-style truncation** *(0.3.0)*: Renaming edits the name right where it sits, a new search toggle searches your whole home folder recursively, and long file names truncate in the middle like Finder.
+- **Faster large folders & shortcuts cheatsheet** *(0.1.3)*: Grid, List, and Column views load big folders in smooth batches; a quick-reference shortcuts panel, a standalone Recents item, and a Trash space indicator were added too.
 - **Transparency controls** *(0.1.1)*: Sidebar and window transparency, adjustable from one place in the menu bar.
 - **Menu bar overhaul & appearance themes** *(0.1.0)*: Proper native menus, a Light/Dark/System appearance picker independent of your Mac's setting, real image thumbnails in Grid view, and Undo/Redo for file operations.
 - **Full keyboard navigation** *(0.0.10)*: Move around and select files entirely from the arrow keys, no mouse required.
