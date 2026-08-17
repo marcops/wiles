@@ -1,5 +1,18 @@
 # Release Notes
 
+## Version 0.3.7
+**Dialog Consistency Release**
+
+### Bug Fixes:
+- **Duplicate Cleaner's Confirm Button Was Undersized**: It rendered noticeably smaller than the equivalent button in every other dialog in the app. Fixed to match.
+
+### Refinements:
+- **Every Dialog Now Looks and Behaves the Same**: Settings, Help, Duplicate Cleaner, and every other dialog window in Wiles now share the exact same header, background, and button layout — no more dialogs that felt slightly different from each other.
+- **Shorter Duplicate Cleaner Button**: Its confirm button now reads "Move to Trash" instead of a much longer label.
+- **"About" Menu Item Now Reads "About Wiles"**: Matches the standard macOS convention.
+
+---
+
 ## Version 0.3.6
 **Folder Picker Overhaul**
 
@@ -39,78 +52,6 @@
 - **New Folder/File in Column View Could Land in the Wrong Column**: Creating a new item in Column view could appear in a different column than the one you right-clicked, or lose its rename box if the folder happened to refresh at the same moment. Fixed.
 - **Cut/Copy/Paste/Select All Could Break While Renaming**: These shortcuts could stop working correctly while a rename box was open. Fixed.
 - **New Folder/New File No Longer Use a Popup Dialog**: Both now create the item instantly and let you type its name right there, instead of interrupting you with a dialog box.
-
----
-
-## Version 0.3.2
-**Rename & Keyboard Reliability Release**
-
-### Bug Fixes:
-- **Renaming Didn't Save on Return**: Pressing Return, or the numeric-keypad Enter key, after typing a new name sometimes did nothing at all — the new name was never saved. Fixed.
-- **Keyboard Could Stop Responding After Dragging a File to Another App**: Dragging a file out of Wiles into another app (e.g. an attachment into a chat app) could leave the keyboard completely unresponsive everywhere in Wiles until you relaunched it. Fixed.
-
----
-
-## Version 0.3.1
-**Reliability & Safety Release**
-
-### Bug Fixes:
-- **Creating a Symlink Could Delete Your Original File**: If a symlink's destination happened to match its source, Wiles used to delete the source file while trying to create the link — a real data-loss risk. Fixed.
-- **Extracting an Archive Over an Existing File**: Extracting an archive entry into a spot that already had a file is now done safely, instead of a step that could leave you with a corrupted or missing file if extraction failed partway through.
-- **Silent Failures in Shred, Smart Folders, and Batch Rename**: These actions used to fail quietly with no explanation if something went wrong. They now show a clear error so you know what happened.
-- **Invalid Batch Rename Patterns Failed Silently**: Typing a broken search pattern into Batch Rename used to just do nothing. It now tells you the pattern is invalid.
-- **Favorites Pointing to the Wrong Folder After a Move**: Moving a folder that was also saved as a Favorite could leave the Favorite pointing at its old location. Fixed.
-- **Renaming Could Get Stuck**: Navigating away or changing your selection while renaming an item in place could leave it stuck in edit mode. Fixed.
-
-### Refinements:
-- **Better VoiceOver Support**: Added missing accessibility labels to the Wi-Fi Sharing and Archive Inspection windows.
-- **Smoother "Whole Mac" Search in Column View**: Fixed a minor animation glitch that could occur when a lot of search results loaded at once in Column view.
-
----
-
-## Version 0.2.2
-**Stability & Security Hardening Release**
-
-### Security Fixes:
-- **Terminal Could Be Tricked by a Folder Name**: A folder with a specially crafted name could trick the built-in Terminal into running commands you never asked for, the moment you opened it. Fixed — folder names are now always handled safely, no matter what characters they contain.
-- **Smart Folder Search Crash**: Certain special characters typed into a search could crash the app or corrupt a Smart Folder. Fixed.
-
-### Bug Fixes:
-- **Undo/Redo Reliability**: A failed undo (e.g. the file was already moved or deleted outside the app) used to fail silently and could corrupt the redo history. Undo/Redo failures now surface a clear error and never corrupt history.
-- **Duplicate Cleaner No Longer Hangs on Cancel**: Closing the Duplicate Finder mid-scan now stops the scan immediately instead of continuing in the background.
-- **Wi-Fi Folder Sharing Stability**: Fixed a rare crash risk when starting/stopping Wi-Fi folder sharing while a file was still transferring.
-- **File Column View Stale Content**: Rapidly navigating between folders in Column View could briefly show a previous folder's contents. Fixed.
-- **Auto-Organization No Longer Freezes the Window**: Rules that move large files (especially to an external drive) now run fully in the background instead of freezing the app while they work.
-- **Smart Folders Duplicating Results**: Repeated Smart Folder searches over a long session used to start showing duplicate results. Fixed.
-
-### Performance:
-- **Faster, Lighter Everywhere**: Image previews, PDF page counts, file properties, and folder listings are all noticeably snappier now — especially in large folders and on slow or networked drives.
-- **Bounded Memory Over Long Sessions**: Navigation history, expanded-folder state, and file tooltips no longer keep growing the longer you leave Wiles open — memory use now stays capped.
-- **Smoother Column Resizing**: Dragging a column border to resize it feels smoother now — your layout is saved once you let go, not on every tiny movement.
-
----
-
-## Version 0.2.1
-**Navigation, Selection & Stability Release**
-
-### Bug Fixes:
-- **Grid View Arrow-Key Navigation**: Up/Down arrows in Grid View were moving the selection sideways instead of vertically. Fixed.
-- **Selection Lost When Navigating Up**: Going back to a parent folder (or pressing Up) no longer resets selection to the first item — it now restores selection to the child folder you just came from, matching Finder.
-- **List/Column Views No Longer Auto-Select on Open**: Entering a folder in List or Column view used to auto-select the first item; now nothing is selected until you press an arrow key, and the first press selects the right item in the right direction.
-- **Cmd+Z (Undo) Was Silently Broken**: A leftover system "Undo" menu item was intercepting the Cmd+Z shortcut before Wiles ever saw it. Undo/Redo now work reliably.
-- **Periodic Flicker in the File List**: The file list was quietly redrawing itself in the background every so often even when nothing had changed. Fixed — it now only redraws when content genuinely changes.
-- **Mouse Drag-Selection Fixed**: Drag-selecting a box of items (marquee selection) in Grid/List views wasn't reliably catching everything inside the box. Fixed.
-- **Search Toggle Button**: Clicking the search icon a second time to close search sometimes reopened it instead. It's reliable now.
-- **Terminal Drawer Crash on Fast Open/Close**: Rapidly toggling the integrated terminal open and closed could crash the app. Fixed — the terminal session now stays alive in the background, and open/close animates as a smooth slide instead.
-- **Folder Icon During Drag-and-Drop**: Dragging a file over a folder and holding now swaps the folder's icon to the system's "open folder" icon before it spring-loads open, matching Finder.
-
-### Refinements:
-- **Instant Folder Re-Visits**: Revisiting a folder you've already opened shows its contents instantly instead of flashing empty while it reloads.
-- **Restored Smooth Loading for Large Folders**: Folders with more than 500 items load in smoothly again instead of trying to show everything at once.
-- **Thumbnails Generated Once**: Image/video/PDF thumbnails are now generated a single time at a fixed high resolution and reused — zooming the icon size in Grid View no longer regenerates them.
-- **In-Place Name Expansion**: Selecting a file with a long, truncated name and pausing on it briefly now expands the name in place to show it in full, instead of staying truncated with "…".
-- **Richer File Tooltip**: Hovering an item now shows a short delay before a tooltip with name, kind, size, dates, and (for images/PDFs) dimensions or page count.
-- **Shorter Date Format**: File dates in List View now use your system's short date/time style instead of a long fixed format, so they no longer overflow the column.
 
 ---
 
