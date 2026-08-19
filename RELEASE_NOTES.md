@@ -1,12 +1,13 @@
 # Release Notes
 
-## Version 0.3.8
+## Version 0.3.9
 **Sidebar & Path Bar Fix Release**
 
 ### New Features:
 - **New Setting: Always Show Full Path Bar**: An Advanced setting that keeps the full folder path always visible in the header, instead of only showing it while hovering.
 
 ### Bug Fixes:
+- **Could Crash Right After Launch**: A background error-reporting step could crash the app on startup in some cases. Fixed.
 - **Sidebar Folder Tree Couldn't Be Expanded Past Your Home Folder**: Folders outside your home folder's path showed no expand arrow at all, so there was no way to browse into them from the tree. Fixed, and expanding a folder with several previously-opened subfolders no longer freezes the app.
 - **Sidebar Folder Tree Indentation Grew Incorrectly**: Each nested level shifted further right than it should have. Now indents by a consistent amount per level, and a long folder name or a deeply nested tree scrolls horizontally instead of getting clipped or wrapped.
 - **Sidebar Could Appear Vertically Centered Instead of Anchored to the Top**: Fixed.
