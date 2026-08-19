@@ -1,5 +1,20 @@
 # Release Notes
 
+## Version 0.3.8
+**Sidebar & Path Bar Fix Release**
+
+### New Features:
+- **New Setting: Always Show Full Path Bar**: An Advanced setting that keeps the full folder path always visible in the header, instead of only showing it while hovering.
+
+### Bug Fixes:
+- **Sidebar Folder Tree Couldn't Be Expanded Past Your Home Folder**: Folders outside your home folder's path showed no expand arrow at all, so there was no way to browse into them from the tree. Fixed, and expanding a folder with several previously-opened subfolders no longer freezes the app.
+- **Sidebar Folder Tree Indentation Grew Incorrectly**: Each nested level shifted further right than it should have. Now indents by a consistent amount per level, and a long folder name or a deeply nested tree scrolls horizontally instead of getting clipped or wrapped.
+- **Sidebar Could Appear Vertically Centered Instead of Anchored to the Top**: Fixed.
+- **Path Bar Didn't Expand While Dragging a File Over It**: Dragging a file onto the path bar now shows the full path so you can drop it into any folder along the way, matching how it already worked on hover.
+- **Path Bar Could Show the Start of a Long Path Instead of Your Current Folder**: When showing the full path, it now keeps your current folder in view.
+
+---
+
 ## Version 0.3.7
 **Dialog Consistency Release**
 
@@ -40,25 +55,11 @@
 
 ---
 
-## Version 0.3.3
-**Column View Reliability Release**
-
-### New Features:
-- **Column View Now Matches List and Grid**: Multi-select and right-click now work the same way in Column view as they already did everywhere else.
-- **New File Menu Item**: The File menu had "New Folder" but no "New File" — added.
-
-### Bug Fixes:
-- **Shift+Arrow Selection Could Select the Wrong Files**: Extending a selection with Shift+Arrow sometimes jumped from the wrong starting point. It now anchors correctly, including in Column view, and the window scrolls to follow your selection.
-- **New Folder/File in Column View Could Land in the Wrong Column**: Creating a new item in Column view could appear in a different column than the one you right-clicked, or lose its rename box if the folder happened to refresh at the same moment. Fixed.
-- **Cut/Copy/Paste/Select All Could Break While Renaming**: These shortcuts could stop working correctly while a rename box was open. Fixed.
-- **New Folder/New File No Longer Use a Popup Dialog**: Both now create the item instantly and let you type its name right there, instead of interrupting you with a dialog box.
-
----
-
 ## Earlier Highlights
 
 Full detail only sticks around for the 5 most recent versions — everything older collapses here, down to just the features that mattered:
 
+- **Column view matches List/Grid, New File menu item** *(0.3.3)*: Multi-select and right-click now work the same way in Column view as everywhere else, and a "New File" menu item joins "New Folder".
 - **Rename directly in place, "Whole Mac" search & Finder-style truncation** *(0.3.0)*: Renaming edits the name right where it sits, a new search toggle searches your whole home folder recursively, and long file names truncate in the middle like Finder.
 - **Faster large folders & shortcuts cheatsheet** *(0.1.3)*: Grid, List, and Column views load big folders in smooth batches; a quick-reference shortcuts panel, a standalone Recents item, and a Trash space indicator were added too.
 - **Transparency controls** *(0.1.1)*: Sidebar and window transparency, adjustable from one place in the menu bar.
