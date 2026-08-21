@@ -18,6 +18,10 @@
 - **Help Screen's Sidebar Section Showed the Wrong Description**: Fixed.
 - **Sidebar's Folder Tree Could Grow Memory Use Over a Long Session**: Browsing many folders in the sidebar's tree view without restarting the app is now capped instead of growing indefinitely.
 
+### Under the Hood:
+- **More Reliable Local Network Sharing and Auto-Organization**: Fixed two rare timing bugs that could occasionally cause a crash while sharing files over your local network or while Auto-Organization was watching a folder.
+- **Large Parts of the App Reorganized Internally**: The menu bar, sidebar, keyboard shortcuts, and folder auto-organization code were each split into smaller, focused pieces with no change in behavior — makes future bug fixes and features land faster and with less risk of side effects elsewhere in the app.
+
 ---
 
 ## Version 0.3.9
