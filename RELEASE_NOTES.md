@@ -1,5 +1,18 @@
 # Release Notes
 
+## Version 0.3.10
+**Accessibility & Translation Release**
+
+### Refinements:
+- **Better VoiceOver Support**: Several dialogs and sidebar rows — including Duplicate Cleaner, File Properties, archive password entry, symlink creation, and the feedback form — now announce themselves properly to VoiceOver.
+- **More Consistent Translations**: A number of screens that showed English text regardless of your language setting — including item counts, error messages, photo details, and keyboard shortcut hints — are now fully translated into every supported language.
+
+### Bug Fixes:
+- **Trash Badge Could Misreport as Empty in Some Languages**: The sidebar's "empty trash" indicator relied on matching specific English text and could show incorrectly outside English. Fixed.
+- **Copy/Paste/Select All Didn't Work While Typing a Path**: Using those shortcuts while editing the path bar acted on the selected files instead of the text you were typing, the same bug already fixed for the rename field. Fixed.
+
+---
+
 ## Version 0.3.9
 **Sidebar & Path Bar Fix Release**
 
@@ -45,14 +58,6 @@
 
 ### Bug Fixes:
 - **Search Field Was Too Narrow**: The search box in the header didn't expand to use the available space, making it harder to see what you typed. Fixed.
-
----
-
-## Version 0.3.4
-**Archive Extraction Reliability Release**
-
-### Bug Fixes:
-- **Extracting a File From an Archive to an External Drive or Network Location Could Fail**: Pulling a single file out of a Zip (or similar archive) via the archive inspector could silently fail when the destination was on an external drive, network share, or other separate volume. Fixed.
 
 ---
 
