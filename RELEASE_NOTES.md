@@ -3,6 +3,9 @@
 ## Version 0.3.10
 **Accessibility & Translation Release**
 
+### New Features:
+- **Paste Now Creates a File From Copied Text or Images**: If you copy a screenshot or some text and paste into a folder with nothing else copied, Wiles now creates a new file from it instead of doing nothing — an image, or a text file.
+
 ### Refinements:
 - **Better VoiceOver Support**: Several dialogs and sidebar rows — including Duplicate Cleaner, File Properties, archive password entry, symlink creation, and the feedback form — now announce themselves properly to VoiceOver.
 - **More Consistent Translations**: A number of screens that showed English text regardless of your language setting — including item counts, error messages, photo details, and keyboard shortcut hints — are now fully translated into every supported language.
@@ -10,6 +13,10 @@
 ### Bug Fixes:
 - **Trash Badge Could Misreport as Empty in Some Languages**: The sidebar's "empty trash" indicator relied on matching specific English text and could show incorrectly outside English. Fixed.
 - **Copy/Paste/Select All Didn't Work While Typing a Path**: Using those shortcuts while editing the path bar acted on the selected files instead of the text you were typing, the same bug already fixed for the rename field. Fixed.
+- **Could Freeze When Launching or Browsing With a Sleeping Network Drive**: Recently-opened folders, favorites, or the current folder living on an unreachable network share could stall the whole app at launch or while browsing. Fixed.
+- **Preview Panel Looked Too Bright in Light Mode**: Its translucent background wasn't dimming correctly in Light appearance. Fixed.
+- **Help Screen's Sidebar Section Showed the Wrong Description**: Fixed.
+- **Sidebar's Folder Tree Could Grow Memory Use Over a Long Session**: Browsing many folders in the sidebar's tree view without restarting the app is now capped instead of growing indefinitely.
 
 ---
 
