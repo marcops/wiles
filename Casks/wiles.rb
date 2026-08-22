@@ -1,6 +1,6 @@
 cask "wiles" do
-  version "0.3.9"
-  sha256 "4e335321dc8f387f6d9332ca7da2e7470b15d5248c0e58ab3c7150a8315d4739"
+  version "0.3.10"
+  sha256 "4bc2048415f7f2f9141f1525223e770d1cd065785a100c55a80ef711c507b52c"
 
   url "https://github.com/marcops/wiles/releases/download/v#{version}/wiles-v#{version}.zip"
   name "Wiles"
