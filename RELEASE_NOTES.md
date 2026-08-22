@@ -5,10 +5,12 @@
 
 ### New Features:
 - **Paste Now Creates a File From Copied Text or Images**: If you copy a screenshot or some text and paste into a folder with nothing else copied, Wiles now creates a new file from it instead of doing nothing — an image, or a text file.
+- **Sidebar Auto-Hide**: A new Advanced setting (also in the View menu) collapses the sidebar into a slim icon-only rail; hover over it to bring it back to full width.
 
 ### Refinements:
-- **Better VoiceOver Support**: Several dialogs and sidebar rows — including Duplicate Cleaner, File Properties, archive password entry, symlink creation, and the feedback form — now announce themselves properly to VoiceOver.
+- **Better VoiceOver Support**: Several dialogs and sidebar rows — including Duplicate Cleaner, File Properties, archive password entry, symlink creation, and the feedback form — now announce themselves properly to VoiceOver. Extended to more controls across the footer, header search/filter buttons, and the sidebar folder tree's expand/collapse arrow.
 - **More Consistent Translations**: A number of screens that showed English text regardless of your language setting — including item counts, error messages, photo details, and keyboard shortcut hints — are now fully translated into every supported language.
+- **New Keyboard Shortcuts**: "New File" (⌘⌥N) and "Move to Trash" (Delete) now show their shortcuts in the File menu.
 
 ### Bug Fixes:
 - **Trash Badge Could Misreport as Empty in Some Languages**: The sidebar's "empty trash" indicator relied on matching specific English text and could show incorrectly outside English. Fixed.
@@ -17,10 +19,20 @@
 - **Preview Panel Looked Too Bright in Light Mode**: Its translucent background wasn't dimming correctly in Light appearance. Fixed.
 - **Help Screen's Sidebar Section Showed the Wrong Description**: Fixed.
 - **Sidebar's Folder Tree Could Grow Memory Use Over a Long Session**: Browsing many folders in the sidebar's tree view without restarting the app is now capped instead of growing indefinitely.
+- **Moving a File Over an Existing One Could Lose Data if the Move Failed Partway**: The old file was deleted before the move was confirmed to succeed. Now the replace happens atomically. Fixed.
+- **"Connect to Server" Could Fail Silently**: An invalid or unreachable address now shows an error instead of doing nothing.
+- **Sidebar Folder Tree's Right-Click Highlight Could Stay on Two Folders at Once**: Fixed.
+- **Inline File Preview Could Crash the App Under Memory Pressure**: Now shows an "unavailable" placeholder instead.
+- **Sidebar Could Stay Visible With Every Section Turned Off**: It now hides entirely instead of showing an empty panel.
+- **Sidebar's Scrollbars Could Appear or Size Themselves Incorrectly**: Sidebar rows now truncate long names instead of needing to scroll sideways, and the vertical scrollbar no longer miscalculates its size.
+- **Sidebar's Folder Tree Could Get Stuck Loading Forever**: A folder structure that looped back on itself (e.g. a volume mounted inside itself) could leave the tree spinning indefinitely. Fixed, with a safety timeout so it can no longer hang regardless of cause.
+- **Folder Tree and Tags Rows Didn't Highlight on Hover**: Now match the rest of the sidebar (Favorites, Places, Network, Recents).
+- **Undo/Redo and the Integrated Terminal Could Leak Between Windows**: An undo or terminal session in one window could affect another open window instead of staying independent. Fixed.
+- **Failed Clipboard-to-File Paste Now Shows an Error**: Previously failed silently with no feedback.
 
 ### Under the Hood:
-- **More Reliable Local Network Sharing and Auto-Organization**: Fixed two rare timing bugs that could occasionally cause a crash while sharing files over your local network or while Auto-Organization was watching a folder.
-- **Large Parts of the App Reorganized Internally**: The menu bar, sidebar, keyboard shortcuts, and folder auto-organization code were each split into smaller, focused pieces with no change in behavior — makes future bug fixes and features land faster and with less risk of side effects elsewhere in the app.
+- **More Reliable Local Network Sharing and Auto-Organization**: Fixed two rare timing bugs that could occasionally cause a crash while sharing files over your local network or while Auto-Organization was watching a folder. A further rare timing bug in local sharing — which could occasionally use the wrong shared folder or password under load — is also fixed.
+- **Large Parts of the App Reorganized Internally**: The menu bar, sidebar, keyboard shortcuts, and folder auto-organization code were each split into smaller, focused pieces with no change in behavior — makes future bug fixes and features land faster and with less risk of side effects elsewhere in the app. Continued with the app's core state management, several dead code paths, and a handful of duplicated code blocks.
 
 ---
 
