@@ -1,5 +1,12 @@
 # Release Notes
 
+## Version 0.3.11 (Upcoming)
+
+### Bug Fixes:
+- **Tags Section Rows Used a Different Font Than the Rest of the Sidebar**: Fixed to match Favorites, Places, Network, and Recents.
+
+---
+
 ## Version 0.3.10
 **Accessibility & Translation Release**
 
@@ -73,14 +80,6 @@
 - **Type or Click to Pick a Folder**: The folder path now sits at the top of the picker and can be typed directly — Wiles checks it's a real folder before accepting it — or set by clicking through the tree, which scrolls to keep your selection in view.
 - **Folders Without Subfolders No Longer Show a Misleading Expand Arrow**.
 - **Tidier Add Rule Row**: The folder buttons in "Add New Rule" are wider and left-align long names instead of centering and truncating them awkwardly, and the extension field is now sized for what people actually type.
-
----
-
-## Version 0.3.5
-**Search Bar Fix Release**
-
-### Bug Fixes:
-- **Search Field Was Too Narrow**: The search box in the header didn't expand to use the available space, making it harder to see what you typed. Fixed.
 
 ---
 
