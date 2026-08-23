@@ -1,9 +1,25 @@
 # Release Notes
 
-## Version 0.3.11 (Upcoming)
+## Version 0.3.11
+
+### New Features:
+- **Batch Rename Now Supports Regex**: A new "Regex" tab in Batch Rename lets you rename using a regular expression pattern and replacement template, alongside the existing Find & Replace, Prefix & Suffix, and Sequence Number modes.
 
 ### Bug Fixes:
 - **Tags Section Rows Used a Different Font Than the Rest of the Sidebar**: Fixed to match Favorites, Places, Network, and Recents.
+- **Redoing an Undone Paste of a File Could Create an Empty Folder Instead**: Undoing then redoing a pasted or copy-duplicated file could silently create an empty folder in its place while the real file stayed in the Trash. Redo now correctly restores files instead of always creating a folder — and clearly tells you when a specific file creation can't be redone (Wiles doesn't keep the original content around to recreate it) instead of silently doing the wrong thing.
+- **Trash Info Could Show the Wrong State With Multiple Windows Open**: The Trash size and its loading spinner were shared across every open window, so activity in one window's Trash view could affect what another window displayed. Each window now tracks its own Trash state independently.
+- **Duplicate File and Folder Names Were Inconsistent**: Pasting a duplicate file could produce "photo_1.png" while creating a new file, folder, or merged PDF produced "Document 2.txt" — two different naming styles depending on how the copy was made. Now consistent everywhere, matching Finder's own "Document 2.txt" convention.
+- **Disk Usage Panel Could Show Stale Data After Quickly Switching Folders**: Navigating to a new folder right after opening the disk usage panel could occasionally leave it showing the previous folder's numbers instead of updating. Fixed.
+- **Error Messages and the Properties Sheet Could Appear in Every Open Window at Once**: An error from one window's action (or opening Properties on a file) could pop up identically in every other open window. Now scoped to the window where it actually happened.
+- **Terminal, Preview, and Disk Usage Panels Could Open in Every Window at Once**: Toggling any of these in one window opened it in every other open window too, and the terminal even started a separate shell in each. Each window now remembers its own state independently.
+- **Creating a Symbolic Link Could Silently Delete an Existing File With the Same Name**: Typing a link name that matched a file already in the folder would permanently remove that file with no warning. Wiles now warns you before that can happen.
+- **Password-Protected ZIP Had No Way to Catch a Typo**: A single password field meant a typing mistake could lock you out of your own archive forever. A confirmation field now catches a mismatch before the archive is created.
+
+### Under the Hood:
+- **Continued Internal Cleanup**: Removed two unused abstraction layers left over from an earlier refactor, consolidated five near-duplicate "find a free name" implementations and three near-duplicate loading-state screens (Archive Inspector, Duplicate Cleaner, Disk Usage) into shared, single implementations, removed a hardcoded tag-color list that duplicated the app's single source of truth for tag colors, and unified the Grid and List views' shared scroll/selection/pagination scaffolding into one common implementation so the two view modes can no longer drift out of sync with each other.
+- **File Operations Now Consistently Run Off the Main Thread**: Move, copy, rename, trash, and new-folder operations were previously synchronous calls that any call site had to remember to dispatch off the main thread itself — some places already did, but the responsibility was scattered. These are now properly asynchronous throughout, closing off a class of potential UI stalls during file operations.
+- **App State Reorganized Into Focused Pieces**: The app's core in-memory state (file browsing, navigation, selection, preferences) is now split into separate, focused pieces instead of one large shared object — makes future bug fixes land faster and reduces the chance of one feature's change accidentally affecting another.
 
 ---
 
