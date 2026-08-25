@@ -1,5 +1,14 @@
 # Release Notes
 
+## Version 0.3.12
+
+### Bug Fixes:
+- **Traffic-Light Buttons Could Jump or Swap Places While Resizing the Window**: Dragging a window edge could occasionally make the close/minimize/zoom buttons flicker to the wrong spot before settling back. Fixed.
+- **Sidebar's Folder Tree Could Get Stuck Loading Forever**: Turning on the Directory Tree sidebar section for the first time in a session could occasionally leave it spinning indefinitely instead of loading. Fixed.
+- **Sidebar Rows Could Peek Out From Under the Traffic-Light Buttons**: Scrolling the sidebar all the way up could show a row's label running behind the window's close/minimize/zoom buttons. It now fades out at the top edge instead.
+- **Selecting a File or Folder in Grid View Could Change How Its Name Was Shortened**: A long name's truncation could shift by a character or two the moment you selected it, instead of staying exactly the same. Fixed.
+- **"Auto-Hide Sidebar" Setting's Name Was Needlessly Long**: Shortened across every supported language.
+
 ## Version 0.3.11
 
 ### New Features:
@@ -85,17 +94,6 @@
 - **Every Dialog Now Looks and Behaves the Same**: Settings, Help, Duplicate Cleaner, and every other dialog window in Wiles now share the exact same header, background, and button layout — no more dialogs that felt slightly different from each other.
 - **Shorter Duplicate Cleaner Button**: Its confirm button now reads "Move to Trash" instead of a much longer label.
 - **"About" Menu Item Now Reads "About Wiles"**: Matches the standard macOS convention.
-
----
-
-## Version 0.3.6
-**Folder Picker Overhaul**
-
-### Refinements:
-- **Choose Folder Now Shows Your Favorites and Browses Fully**: The folder picker used in Auto-Organization Rules now shows your actual sidebar Favorites (hidden if you don't have any saved), and its folder tree can now be expanded all the way down instead of stopping after one level.
-- **Type or Click to Pick a Folder**: The folder path now sits at the top of the picker and can be typed directly — Wiles checks it's a real folder before accepting it — or set by clicking through the tree, which scrolls to keep your selection in view.
-- **Folders Without Subfolders No Longer Show a Misleading Expand Arrow**.
-- **Tidier Add Rule Row**: The folder buttons in "Add New Rule" are wider and left-align long names instead of centering and truncating them awkwardly, and the extension field is now sized for what people actually type.
 
 ---
 
