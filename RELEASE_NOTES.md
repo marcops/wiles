@@ -1,5 +1,16 @@
 # Release Notes
 
+## Version 0.3.13
+
+### New Features:
+- **Remember Each Folder's Own View**: A new Advanced Settings option lets every folder remember whether you last viewed it as a Grid or a List, instead of one setting for the whole app.
+
+### Bug Fixes:
+- **Grid View Names Could Get Stuck Cut Off Instead of Wrapping**: A long file or folder name could stay squeezed onto one line with no way to read the rest, instead of wrapping onto a second line the way it's meant to. Fixed — names now wrap properly, and selecting an item to see its full name no longer gets cut off either.
+- **Grid View's Color Tags Could Be Hidden**: Color tags on a file or folder could end up hidden below the name instead of showing next to it.
+- **Sidebar's Folder Tree Could Still Get Stuck With No Way to Retry**: If the folder tree failed to load, there was no way to try again. A working "Retry" option now appears.
+- **Sidebar's Scrollbar Could Stay Visible Instead of Fading**: It no longer stays permanently visible when the sidebar isn't being scrolled.
+
 ## Version 0.3.12
 
 ### Bug Fixes:
@@ -81,19 +92,6 @@
 - **Sidebar Could Appear Vertically Centered Instead of Anchored to the Top**: Fixed.
 - **Path Bar Didn't Expand While Dragging a File Over It**: Dragging a file onto the path bar now shows the full path so you can drop it into any folder along the way, matching how it already worked on hover.
 - **Path Bar Could Show the Start of a Long Path Instead of Your Current Folder**: When showing the full path, it now keeps your current folder in view.
-
----
-
-## Version 0.3.7
-**Dialog Consistency Release**
-
-### Bug Fixes:
-- **Duplicate Cleaner's Confirm Button Was Undersized**: It rendered noticeably smaller than the equivalent button in every other dialog in the app. Fixed to match.
-
-### Refinements:
-- **Every Dialog Now Looks and Behaves the Same**: Settings, Help, Duplicate Cleaner, and every other dialog window in Wiles now share the exact same header, background, and button layout — no more dialogs that felt slightly different from each other.
-- **Shorter Duplicate Cleaner Button**: Its confirm button now reads "Move to Trash" instead of a much longer label.
-- **"About" Menu Item Now Reads "About Wiles"**: Matches the standard macOS convention.
 
 ---
 
