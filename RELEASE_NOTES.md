@@ -1,5 +1,14 @@
 # Release Notes
 
+## Version 0.3.14
+
+### Bug Fixes:
+- **Tags Didn't Match the Ones on Your Mac**: The sidebar's Tags section and the right-click Tags menu used a fixed English list, so on a Mac set to another language the tag names and colours were wrong, and tagging a file in Wiles could create a separate tag from the one your Mac already uses. Wiles now reads your Mac's own tag names and colours, so both sides act on the same tag.
+
+### Refinements:
+- **List View Dates Now Have Leading Zeros**: Dates and times in the List View columns pad to two digits — 01/02/26 08:05 instead of 1/2/26 8:05 — while still following your region's date and time format.
+- **Sidebar Edge Behind the Window Buttons**: The strip behind the close/minimize/zoom buttons is now a soft translucent blur instead of a solid block, so a sidebar row scrolled to the very top stays faintly visible through it instead of disappearing.
+
 ## Version 0.3.13
 
 ### New Features:
@@ -79,26 +88,11 @@
 
 ---
 
-## Version 0.3.9
-**Sidebar & Path Bar Fix Release**
-
-### New Features:
-- **New Setting: Always Show Full Path Bar**: An Advanced setting that keeps the full folder path always visible in the header, instead of only showing it while hovering.
-
-### Bug Fixes:
-- **Could Crash Right After Launch**: A background error-reporting step could crash the app on startup in some cases. Fixed.
-- **Sidebar Folder Tree Couldn't Be Expanded Past Your Home Folder**: Folders outside your home folder's path showed no expand arrow at all, so there was no way to browse into them from the tree. Fixed, and expanding a folder with several previously-opened subfolders no longer freezes the app.
-- **Sidebar Folder Tree Indentation Grew Incorrectly**: Each nested level shifted further right than it should have. Now indents by a consistent amount per level, and a long folder name or a deeply nested tree scrolls horizontally instead of getting clipped or wrapped.
-- **Sidebar Could Appear Vertically Centered Instead of Anchored to the Top**: Fixed.
-- **Path Bar Didn't Expand While Dragging a File Over It**: Dragging a file onto the path bar now shows the full path so you can drop it into any folder along the way, matching how it already worked on hover.
-- **Path Bar Could Show the Start of a Long Path Instead of Your Current Folder**: When showing the full path, it now keeps your current folder in view.
-
----
-
 ## Earlier Highlights
 
 Full detail only sticks around for the 5 most recent versions — everything older collapses here, down to just the features that mattered:
 
+- **Always show the full path bar** *(0.3.9)*: An Advanced setting keeps the full folder path visible in the header instead of only while hovering.
 - **Column view matches List/Grid, New File menu item** *(0.3.3)*: Multi-select and right-click now work the same way in Column view as everywhere else, and a "New File" menu item joins "New Folder".
 - **Rename directly in place, "Whole Mac" search & Finder-style truncation** *(0.3.0)*: Renaming edits the name right where it sits, a new search toggle searches your whole home folder recursively, and long file names truncate in the middle like Finder.
 - **Faster large folders & shortcuts cheatsheet** *(0.1.3)*: Grid, List, and Column views load big folders in smooth batches; a quick-reference shortcuts panel, a standalone Recents item, and a Trash space indicator were added too.
