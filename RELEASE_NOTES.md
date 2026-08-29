@@ -1,6 +1,6 @@
 # Release Notes
 
-## Version 0.3.15
+## Version 0.3.15 (UPCOMMING)
 
 ### Refinements:
 - **Moving a File Onto One With the Same Name Now Asks What to Do**: Instead of quietly replacing the existing file, Wiles shows a Replace / Keep Both / Cancel choice (with an "apply to all" option for a batch). "Replace" sends the old file to the Trash rather than destroying it.
@@ -9,7 +9,15 @@
 - **"Secure Shred" Removed**: It promised to overwrite a file's data before deleting, which modern (SSD) drives don't let any app actually guarantee. Regular permanent delete and Move to Trash are unchanged.
 - **New Files and Folders Appear in the Right Place**: A newly created item slots straight into its correct sorted position in the list, instead of appearing at the top and then jumping.
 - **Applying Permissions to a Whole Folder Shows Progress**: A recursive permission change now shows progress and a summary of what changed.
-- **A Few More Screens Fully Translated**: Some error messages that still fell back to English now follow your language setting.
+- **More Text Follows Your Language**: The "System Default" option in the language picker is now translated, and the summaries shown when only part of a batch succeeds — a batch rename, a shred, a paste, a move, or a Merge into PDF where some files couldn't be added — now follow your language setting instead of falling back to English.
+- **Empty Search Results Now Explain Why**: When a search inside file contents turns up nothing because the term is too short, or a pattern search can't be understood, Wiles now says so instead of just showing "No Results Found".
+- **Sorting a Large Folder Is Instant**: Changing the sort order (or clicking a List View column header) no longer re-reads the whole folder from disk just to reorder what's already on screen.
+- **Content Search Reads Older Text Files**: Searching inside file contents now also finds matches in text files saved in an older, non-standard encoding, instead of quietly skipping them.
+- **"Images" and "Archives" Quick Filters Recognise More Types**: These search shortcuts now use the system's own knowledge of file types, so formats like HEIC are matched instead of only a fixed list of extensions.
+- **Copy Path → Terminal Is Safer to Paste**: The terminal-escaped Copy Path option now wraps the whole path in quotes, so paths with a leading "~", spaces, or unusual characters paste and run correctly.
+- **"Merge into PDF" Only Shows for Two or More Files**: The menu item no longer appears when a single file is selected.
+- **Smoother While You Work**: The icon-size slider, the Batch Rename preview as you type, the right-click "Open With" menu, and colour-tag dots in large folders all do less repeated work, so they keep up better.
+- **Multiple Windows Remember Their Own Size**: Each open window keeps its own size and position instead of every window competing for one saved frame. Startup also does less work before the first window appears.
 
 ### Bug Fixes:
 - **Undoing a Folder Move Could Break a Favorite**: Moving a folder you'd added to Favorites (or one containing a Favorite) and then pressing Undo left the Favorite pointing at the now-empty new location. Undo and Redo now keep Favorites in sync.
@@ -30,11 +38,19 @@
 - **View Navigation Mode Wasn't Restored on Launch**: The setting was saved but never re-read at startup. Fixed.
 - **Dragging a Multi-Selection**: Dragging several selected files at once now carries all of them, not just one.
 - **Auto-Organization Rules Now Get an "Undo Isn't Available" Notice**: Rule-driven moves were never added to Undo history; the rules screen now says so.
+- **Ejecting a Drive No Longer Freezes the Window**: Clicking eject on a slow or network volume kept the window unresponsive until it finished. It now works in the background.
+- **Mouse Pointer Could Get Stuck**: After hovering certain controls the pointer could stay as a resize or hand shape instead of returning to normal. Fixed.
+- **Sharing a Folder Over Wi-Fi Finds a Free Connection**: If the usual connection was already in use, sharing failed to start; it now falls back to another one automatically.
+- **Cancelling the Duplicate Cleaner Now Stops It**: Closing the Duplicate Cleaner while it was still moving files to the Trash let the rest finish anyway. It now stops.
+- **Auto-Organization Won't Accept a Self-Referential Rule**: A rule whose source and destination are really the same folder reached through a shortcut is now rejected up front.
+- **Wi-Fi Share Reports an Interrupted Download**: If a file couldn't be fully read partway through, the transfer now ends with an error instead of handing over a truncated file that looks complete.
+- **"Search Everywhere" Toggle Stays in Sync**: Turning it on or off from Settings now refreshes the results the same as the search bar's own toggle does.
 
 ### Under the Hood:
 - **Auto-Organization Does Less Work Per Batch**: Moving many files at once no longer re-saves the rule list and restarts folder watching once per file.
-- **Fewer Repeated Calculations While Scrolling**: File sizes, the status-bar total, and icon resizing go through shared, reused helpers instead of being rebuilt per row per frame.
-- **Continued Internal Cleanup**: A large batch of code-review findings fixed — consolidated duplicated logic around settings storage, error reporting, sidebar visibility, network-drive path checks, and archive handling; removed several unused code paths.
+- **Fewer Repeated Calculations While Scrolling**: File sizes, the status-bar total, icon resizing, tag colours, and the "cut" state of a row now go through shared, cached helpers instead of being rebuilt per row per frame. Search filters read a file's details once per file instead of once per filter term.
+- **Settings Storage Split Into Focused Pieces**: The single object holding every saved preference is now separated into view, sidebar, search, appearance, and favorites groups, each next to the code that uses it — making future changes safer and smaller.
+- **Continued Internal Cleanup**: A large batch of code-review findings fixed — one shared implementation for the "Copy Path" submenu (previously written four times), one source of truth for which sidebar sections are shown, and a wide sweep of named constants, consolidated duplicated logic, and removed dead code across services, views, and error handling.
 
 ## Version 0.3.14
 
@@ -85,23 +101,6 @@
 - **Continued Internal Cleanup**: Removed two unused abstraction layers left over from an earlier refactor, consolidated five near-duplicate "find a free name" implementations and three near-duplicate loading-state screens (Archive Inspector, Duplicate Cleaner, Disk Usage) into shared, single implementations, removed a hardcoded tag-color list that duplicated the app's single source of truth for tag colors, and unified the Grid and List views' shared scroll/selection/pagination scaffolding into one common implementation so the two view modes can no longer drift out of sync with each other.
 - **File Operations Now Consistently Run Off the Main Thread**: Move, copy, rename, trash, and new-folder operations were previously synchronous calls that any call site had to remember to dispatch off the main thread itself — some places already did, but the responsibility was scattered. These are now properly asynchronous throughout, closing off a class of potential UI stalls during file operations.
 - **App State Reorganized Into Focused Pieces**: The app's core in-memory state (file browsing, navigation, selection, preferences) is now split into separate, focused pieces instead of one large shared object — makes future bug fixes land faster and reduces the chance of one feature's change accidentally affecting another.
-
----
-
-## Earlier Highlights
-
-Full detail only sticks around for the 5 most recent versions — everything older collapses here, down to just the features that mattered:
-
-- **Create a file from copied text or images, sidebar auto-hide** *(0.3.10)*: Paste with nothing else copied turns a screenshot or text selection into a new file; a new setting collapses the sidebar to a slim icon rail you hover to expand.
-- **Always show the full path bar** *(0.3.9)*: An Advanced setting keeps the full folder path visible in the header instead of only while hovering.
-- **Column view matches List/Grid, New File menu item** *(0.3.3)*: Multi-select and right-click now work the same way in Column view as everywhere else, and a "New File" menu item joins "New Folder".
-- **Rename directly in place, "Whole Mac" search & Finder-style truncation** *(0.3.0)*: Renaming edits the name right where it sits, a new search toggle searches your whole home folder recursively, and long file names truncate in the middle like Finder.
-- **Faster large folders & shortcuts cheatsheet** *(0.1.3)*: Grid, List, and Column views load big folders in smooth batches; a quick-reference shortcuts panel, a standalone Recents item, and a Trash space indicator were added too.
-- **Transparency controls** *(0.1.1)*: Sidebar and window transparency, adjustable from one place in the menu bar.
-- **Menu bar overhaul & appearance themes** *(0.1.0)*: Proper native menus, a Light/Dark/System appearance picker independent of your Mac's setting, real image thumbnails in Grid view, and Undo/Redo for file operations.
-- **Full keyboard navigation** *(0.0.10)*: Move around and select files entirely from the arrow keys, no mouse required.
-- **Wi-Fi folder sharing & network discovery** *(0.0.6)*: Share any folder over your Wi-Fi network in one click and open it from a browser on another device; shared folders on your network are discovered automatically. Plus auto-organization rules that sort incoming files into folders by type.
-- **First release** *(0.0.5)*: Wiles launched with a fast, native file browser, a disk usage visualizer, batch renaming with live previews, built-in image conversion and cropping, and native Zip support.
 
 ---
 
