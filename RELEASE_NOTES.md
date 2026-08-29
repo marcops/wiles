@@ -1,5 +1,41 @@
 # Release Notes
 
+## Version 0.3.15
+
+### Refinements:
+- **Moving a File Onto One With the Same Name Now Asks What to Do**: Instead of quietly replacing the existing file, Wiles shows a Replace / Keep Both / Cancel choice (with an "apply to all" option for a batch). "Replace" sends the old file to the Trash rather than destroying it.
+- **Search Is Smoother While Typing**: The file list waits a fraction of a second after your last keystroke before refreshing, instead of re-running on every letter — noticeably less flicker, especially with "search everywhere" on.
+- **Permanent Delete Now Asks First**: "Delete Immediately" (which skips the Trash and can't be undone) shows a confirmation, matching "Move to Trash". You can still turn confirmations off in Advanced Settings.
+- **"Secure Shred" Removed**: It promised to overwrite a file's data before deleting, which modern (SSD) drives don't let any app actually guarantee. Regular permanent delete and Move to Trash are unchanged.
+- **New Files and Folders Appear in the Right Place**: A newly created item slots straight into its correct sorted position in the list, instead of appearing at the top and then jumping.
+- **Applying Permissions to a Whole Folder Shows Progress**: A recursive permission change now shows progress and a summary of what changed.
+- **A Few More Screens Fully Translated**: Some error messages that still fell back to English now follow your language setting.
+
+### Bug Fixes:
+- **Undoing a Folder Move Could Break a Favorite**: Moving a folder you'd added to Favorites (or one containing a Favorite) and then pressing Undo left the Favorite pointing at the now-empty new location. Undo and Redo now keep Favorites in sync.
+- **The Cancel Button on a Running Copy or Delete Didn't Cancel**: Pressing ✕ on an in-progress file operation only hid the progress bar — the work kept running. It now actually stops.
+- **Very Large ZIP Files Showed as Empty**: A ZIP over 4 GB (or with a very large number of entries) listed nothing in the Archive Inspector. Its contents now show correctly.
+- **ZIP Entries With Unusual Names**: Files named like "report[1].txt", and files from ZIPs made on Windows with non-English names, could be listed or extracted incorrectly, or skipped entirely. Fixed.
+- **Smart Folder Search Could Spin Forever on a Drive Without Indexing**: On an external or network drive with system search indexing off, a smart folder could load indefinitely. It now stops after a short timeout.
+- **Auto-Organization Could Move a File Mid-Download**: The "is this file finished writing" check was too quick and could catch a download during a brief pause, moving an incomplete file. The check is now stricter — size and modification time have to stay steady over a longer window.
+- **Renaming**: Renaming to a name that already exists now shows a clear message instead of a raw error, and renaming that only changes capitalization ("Photo.JPG" → "photo.JPG") now works.
+- **Applying Permissions to a Folder Could Lock You Out of Its Subfolders**: Applying something like "read-only" to a folder and everything inside it stripped subfolders of the bit that lets you open them. Subfolders now keep it.
+- **The Cloud Status Icon Didn't Update During a Transfer**: A file's iCloud up/down arrow stayed frozen while it was actually uploading or downloading.
+- **Disk Usage "Others" Slice Was Clickable**: Double-clicking the combined "Others (N)" slice tried to open a folder that doesn't exist and showed a "not found" error. It's no longer clickable.
+- **Copying a File's Contents to the Clipboard Failed Silently**: A file that's too large or isn't text now tells you why instead of doing nothing.
+- **Duplicate Finder Could Trust a Partial Read**: If a file couldn't be fully read — a failing disk, a dropped network drive — it's now left out of the results instead of risking being grouped as a duplicate on an incomplete comparison.
+- **Folder Picker Could Get Stuck With No Way to Retry**: If the folder tree in a picker dialog failed to load, a "Retry" option now appears instead of a dead empty tree.
+- **Terminal Drawer**: Path handling is safer for folders with spaces or special characters; the drawer only follows the browser's current folder when you open it, not while you're working in the shell; and if the shell exits it restarts instead of leaving the panel frozen.
+- **The Permissions Editor No Longer Clears Special Bits**: Changing a file's regular read/write/execute settings kept its special (setuid/setgid/sticky) bits intact.
+- **View Navigation Mode Wasn't Restored on Launch**: The setting was saved but never re-read at startup. Fixed.
+- **Dragging a Multi-Selection**: Dragging several selected files at once now carries all of them, not just one.
+- **Auto-Organization Rules Now Get an "Undo Isn't Available" Notice**: Rule-driven moves were never added to Undo history; the rules screen now says so.
+
+### Under the Hood:
+- **Auto-Organization Does Less Work Per Batch**: Moving many files at once no longer re-saves the rule list and restarts folder watching once per file.
+- **Fewer Repeated Calculations While Scrolling**: File sizes, the status-bar total, and icon resizing go through shared, reused helpers instead of being rebuilt per row per frame.
+- **Continued Internal Cleanup**: A large batch of code-review findings fixed — consolidated duplicated logic around settings storage, error reporting, sidebar visibility, network-drive path checks, and archive handling; removed several unused code paths.
+
 ## Version 0.3.14
 
 ### Bug Fixes:
@@ -52,46 +88,11 @@
 
 ---
 
-## Version 0.3.10
-**Accessibility & Translation Release**
-
-### New Features:
-- **Paste Now Creates a File From Copied Text or Images**: If you copy a screenshot or some text and paste into a folder with nothing else copied, Wiles now creates a new file from it instead of doing nothing — an image, or a text file.
-- **Sidebar Auto-Hide**: A new Advanced setting (also in the View menu) collapses the sidebar into a slim icon-only rail; hover over it to bring it back to full width.
-
-### Refinements:
-- **Better VoiceOver Support**: Several dialogs and sidebar rows — including Duplicate Cleaner, File Properties, archive password entry, symlink creation, and the feedback form — now announce themselves properly to VoiceOver. Extended to more controls across the footer, header search/filter buttons, and the sidebar folder tree's expand/collapse arrow.
-- **More Consistent Translations**: A number of screens that showed English text regardless of your language setting — including item counts, error messages, photo details, and keyboard shortcut hints — are now fully translated into every supported language.
-- **New Keyboard Shortcuts**: "New File" (⌘⌥N) and "Move to Trash" (Delete) now show their shortcuts in the File menu.
-
-### Bug Fixes:
-- **Trash Badge Could Misreport as Empty in Some Languages**: The sidebar's "empty trash" indicator relied on matching specific English text and could show incorrectly outside English. Fixed.
-- **Copy/Paste/Select All Didn't Work While Typing a Path**: Using those shortcuts while editing the path bar acted on the selected files instead of the text you were typing, the same bug already fixed for the rename field. Fixed.
-- **Could Freeze When Launching or Browsing With a Sleeping Network Drive**: Recently-opened folders, favorites, or the current folder living on an unreachable network share could stall the whole app at launch or while browsing. Fixed.
-- **Preview Panel Looked Too Bright in Light Mode**: Its translucent background wasn't dimming correctly in Light appearance. Fixed.
-- **Help Screen's Sidebar Section Showed the Wrong Description**: Fixed.
-- **Sidebar's Folder Tree Could Grow Memory Use Over a Long Session**: Browsing many folders in the sidebar's tree view without restarting the app is now capped instead of growing indefinitely.
-- **Moving a File Over an Existing One Could Lose Data if the Move Failed Partway**: The old file was deleted before the move was confirmed to succeed. Now the replace happens atomically. Fixed.
-- **"Connect to Server" Could Fail Silently**: An invalid or unreachable address now shows an error instead of doing nothing.
-- **Sidebar Folder Tree's Right-Click Highlight Could Stay on Two Folders at Once**: Fixed.
-- **Inline File Preview Could Crash the App Under Memory Pressure**: Now shows an "unavailable" placeholder instead.
-- **Sidebar Could Stay Visible With Every Section Turned Off**: It now hides entirely instead of showing an empty panel.
-- **Sidebar's Scrollbars Could Appear or Size Themselves Incorrectly**: Sidebar rows now truncate long names instead of needing to scroll sideways, and the vertical scrollbar no longer miscalculates its size.
-- **Sidebar's Folder Tree Could Get Stuck Loading Forever**: A folder structure that looped back on itself (e.g. a volume mounted inside itself) could leave the tree spinning indefinitely. Fixed, with a safety timeout so it can no longer hang regardless of cause.
-- **Folder Tree and Tags Rows Didn't Highlight on Hover**: Now match the rest of the sidebar (Favorites, Places, Network, Recents).
-- **Undo/Redo and the Integrated Terminal Could Leak Between Windows**: An undo or terminal session in one window could affect another open window instead of staying independent. Fixed.
-- **Failed Clipboard-to-File Paste Now Shows an Error**: Previously failed silently with no feedback.
-
-### Under the Hood:
-- **More Reliable Local Network Sharing and Auto-Organization**: Fixed two rare timing bugs that could occasionally cause a crash while sharing files over your local network or while Auto-Organization was watching a folder. A further rare timing bug in local sharing — which could occasionally use the wrong shared folder or password under load — is also fixed.
-- **Large Parts of the App Reorganized Internally**: The menu bar, sidebar, keyboard shortcuts, and folder auto-organization code were each split into smaller, focused pieces with no change in behavior — makes future bug fixes and features land faster and with less risk of side effects elsewhere in the app. Continued with the app's core state management, several dead code paths, and a handful of duplicated code blocks.
-
----
-
 ## Earlier Highlights
 
 Full detail only sticks around for the 5 most recent versions — everything older collapses here, down to just the features that mattered:
 
+- **Create a file from copied text or images, sidebar auto-hide** *(0.3.10)*: Paste with nothing else copied turns a screenshot or text selection into a new file; a new setting collapses the sidebar to a slim icon rail you hover to expand.
 - **Always show the full path bar** *(0.3.9)*: An Advanced setting keeps the full folder path visible in the header instead of only while hovering.
 - **Column view matches List/Grid, New File menu item** *(0.3.3)*: Multi-select and right-click now work the same way in Column view as everywhere else, and a "New File" menu item joins "New Folder".
 - **Rename directly in place, "Whole Mac" search & Finder-style truncation** *(0.3.0)*: Renaming edits the name right where it sits, a new search toggle searches your whole home folder recursively, and long file names truncate in the middle like Finder.
