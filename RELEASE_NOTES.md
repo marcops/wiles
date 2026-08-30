@@ -1,6 +1,6 @@
 # Release Notes
 
-## Version 0.3.15 (UPCOMMING)
+## Version 0.3.20 (UPCOMMING)
 
 ### Refinements:
 - **Moving a File Onto One With the Same Name Now Asks What to Do**: Instead of quietly replacing the existing file, Wiles shows a Replace / Keep Both / Cancel choice (with an "apply to all" option for a batch). "Replace" sends the old file to the Trash rather than destroying it.
@@ -18,6 +18,10 @@
 - **"Merge into PDF" Only Shows for Two or More Files**: The menu item no longer appears when a single file is selected.
 - **Smoother While You Work**: The icon-size slider, the Batch Rename preview as you type, the right-click "Open With" menu, and colour-tag dots in large folders all do less repeated work, so they keep up better.
 - **Multiple Windows Remember Their Own Size**: Each open window keeps its own size and position instead of every window competing for one saved frame. Startup also does less work before the first window appears.
+- **Keyboard Shortcuts Tidied Up**: Cmd+] now goes Forward through history (it was zooming by mistake), and Cmd+Up Arrow goes up to the enclosing folder, matching the Finder. The keyboard shortcut cheat sheet now always matches what the keys actually do.
+- **Paste Greys Out When There's Nothing to Paste**: The Edit menu's Paste item now disables itself, the same way Cut and Copy already do.
+- **Renaming With a "/" in the Name**: Typing a slash while renaming is now handled the way the Finder does it, instead of showing a raw error.
+- **Image Folders Load Thumbnails Sooner**: Folders with a few hundred pictures now start preparing thumbnails right away, instead of only once a folder gets very large.
 
 ### Bug Fixes:
 - **Undoing a Folder Move Could Break a Favorite**: Moving a folder you'd added to Favorites (or one containing a Favorite) and then pressing Undo left the Favorite pointing at the now-empty new location. Undo and Redo now keep Favorites in sync.
@@ -45,12 +49,14 @@
 - **Auto-Organization Won't Accept a Self-Referential Rule**: A rule whose source and destination are really the same folder reached through a shortcut is now rejected up front.
 - **Wi-Fi Share Reports an Interrupted Download**: If a file couldn't be fully read partway through, the transfer now ends with an error instead of handing over a truncated file that looks complete.
 - **"Search Everywhere" Toggle Stays in Sync**: Turning it on or off from Settings now refreshes the results the same as the search bar's own toggle does.
+- **Wi-Fi Share Downloads Can Resume**: A download from a shared folder that gets interrupted now picks up where it left off instead of starting over, and video and audio can be scrubbed while they stream.
+- **Folder Contents Update Cleanly After a Paste or Delete**: The list no longer briefly shows the old contents for a frame before settling.
 
 ### Under the Hood:
 - **Auto-Organization Does Less Work Per Batch**: Moving many files at once no longer re-saves the rule list and restarts folder watching once per file.
 - **Fewer Repeated Calculations While Scrolling**: File sizes, the status-bar total, icon resizing, tag colours, and the "cut" state of a row now go through shared, cached helpers instead of being rebuilt per row per frame. Search filters read a file's details once per file instead of once per filter term.
 - **Settings Storage Split Into Focused Pieces**: The single object holding every saved preference is now separated into view, sidebar, search, appearance, and favorites groups, each next to the code that uses it — making future changes safer and smaller.
-- **Continued Internal Cleanup**: A large batch of code-review findings fixed — one shared implementation for the "Copy Path" submenu (previously written four times), one source of truth for which sidebar sections are shown, and a wide sweep of named constants, consolidated duplicated logic, and removed dead code across services, views, and error handling.
+- **Continued Internal Cleanup**: A large batch of code-review findings fixed — one shared implementation for the "Copy Path" submenu (previously written four times), one source of truth for which sidebar sections are shown, and a wide sweep of named constants, consolidated duplicated logic, and removed dead code across services, views, and error handling. A further round followed: one shared folder-tree component behind the sidebar and the folder pickers, one source of truth for every keyboard shortcut and its label, one shared list of image file types, and lighter work per row while scrolling large folders.
 
 ## Version 0.3.14
 
