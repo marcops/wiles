@@ -1,8 +1,10 @@
 # Release Notes
 
-## Version 0.4.0 (UPCOMMING)
+## Version 0.4.0
 
 ### Refinements:
+- **The Path Bar Shows Where a Tag or Smart Folder Search Is**: Clicking a colour tag, or opening a saved smart folder, now shows its name in the path bar — the tag's colour and name, or the smart folder's name — instead of the raw search text. Clicking a smart folder's name opens its search for editing.
+- **"No Results Found" Screen Simplified**: The redundant "Clear Search" button was removed — just the message now.
 - **Moving a File Onto One With the Same Name Now Asks What to Do**: Instead of quietly replacing the existing file, Wiles shows a Replace / Keep Both / Cancel choice (with an "apply to all" option for a batch). "Replace" sends the old file to the Trash rather than destroying it.
 - **Search Is Smoother While Typing**: The file list waits a fraction of a second after your last keystroke before refreshing, instead of re-running on every letter — noticeably less flicker, especially with "search everywhere" on.
 - **Permanent Delete Now Asks First**: "Delete Immediately" (which skips the Trash and can't be undone) shows a confirmation, matching "Move to Trash". You can still turn confirmations off in Advanced Settings.
@@ -27,6 +29,7 @@
 - **Thumbnail Work Stops for Pictures You've Scrolled Past**: Fast-scrolling a folder of thousands of images no longer keeps generating previews for pictures already off screen.
 
 ### Bug Fixes:
+- **Saved Smart Folders Now Load Their Results Right Away**: Opening a saved smart folder showed nothing until you clicked in the search field. It now runs the search as soon as you open it, and uses the same settings as the search bar — including "search everywhere".
 - **Undoing a Folder Move Could Break a Favorite**: Moving a folder you'd added to Favorites (or one containing a Favorite) and then pressing Undo left the Favorite pointing at the now-empty new location. Undo and Redo now keep Favorites in sync.
 - **The Cancel Button on a Running Copy or Delete Didn't Cancel**: Pressing ✕ on an in-progress file operation only hid the progress bar — the work kept running. It now actually stops.
 - **Very Large ZIP Files Showed as Empty**: A ZIP over 4 GB (or with a very large number of entries) listed nothing in the Archive Inspector. Its contents now show correctly.
