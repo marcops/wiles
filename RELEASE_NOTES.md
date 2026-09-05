@@ -1,5 +1,15 @@
 # Release Notes
 
+## Version 0.4.2
+
+### Bug Fixes:
+- **Terminal Could Keep Capturing Your Keystrokes After You Clicked Elsewhere**: With the integrated terminal open, clicking a file, a sidebar item, or empty space elsewhere in the window didn't hand keyboard control back — arrow keys, Delete, and other shortcuts kept going to the terminal instead. Clicking anywhere outside it now returns keyboard control right away; clicking the terminal again gives it back.
+- **Editing a Smart Folder's Search Didn't Save When You Clicked Away**: Opening a saved smart folder's search to tweak it, then clicking elsewhere, left the raw search text showing instead of collapsing back to the folder's name, and the edit wasn't saved. It now saves automatically and collapses back to the name.
+- **Directory Tree's Top Entry Wasn't Aligned With Its Section Title**: The sidebar's Directory Tree section showed its first entry (your drive) slightly out of line with the section's own arrow. Fixed.
+
+### Refinements:
+- **Smart Folder Save Button's Icon Changed, Redundant Clear Button Removed**: The search bar's "save as smart folder" button now shows a save icon instead of a folder icon, and the separate "clear" button next to it was removed.
+
 ## Version 0.4.1
 
 ### Bug Fixes:
@@ -122,15 +132,6 @@
 - **Grid View's Color Tags Could Be Hidden**: Color tags on a file or folder could end up hidden below the name instead of showing next to it.
 - **Sidebar's Folder Tree Could Still Get Stuck With No Way to Retry**: If the folder tree failed to load, there was no way to try again. A working "Retry" option now appears.
 - **Sidebar's Scrollbar Could Stay Visible Instead of Fading**: It no longer stays permanently visible when the sidebar isn't being scrolled.
-
-## Version 0.3.12
-
-### Bug Fixes:
-- **Traffic-Light Buttons Could Jump or Swap Places While Resizing the Window**: Dragging a window edge could occasionally make the close/minimize/zoom buttons flicker to the wrong spot before settling back. Fixed.
-- **Sidebar's Folder Tree Could Get Stuck Loading Forever**: Turning on the Directory Tree sidebar section for the first time in a session could occasionally leave it spinning indefinitely instead of loading. Fixed.
-- **Sidebar Rows Could Peek Out From Under the Traffic-Light Buttons**: Scrolling the sidebar all the way up could show a row's label running behind the window's close/minimize/zoom buttons. It now fades out at the top edge instead.
-- **Selecting a File or Folder in Grid View Could Change How Its Name Was Shortened**: A long name's truncation could shift by a character or two the moment you selected it, instead of staying exactly the same. Fixed.
-- **"Auto-Hide Sidebar" Setting's Name Was Needlessly Long**: Shortened across every supported language.
 
 ## Earlier Highlights
 
