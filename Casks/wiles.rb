@@ -11,10 +11,8 @@ cask "wiles" do
 
   app "Wiles.app"
 
-  postflight do
-    system_command "xattr",
-                   args: ["-cr", "#{appdir}/Wiles.app"],
-                   sudo: false
+  postflight_steps do
+    run "xattr", args: ["-cr", "{{appdir}}/Wiles.app"], sudo: false
   end
 
   zap trash: [
