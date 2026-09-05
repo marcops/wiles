@@ -23,7 +23,7 @@ Download the **[Latest Release DMG](https://github.com/marcops/wiles/releases/la
 
 ### Option 2: Homebrew Cask Terminal
 ```bash
-brew tap marcops/wiles git@github.com:marcops/wiles.git
+brew tap marcops/wiles
 brew install --cask wiles
 ```
 
@@ -67,8 +67,8 @@ Stick with familiar Places and Favorites, or open a full Directory Tree and see 
 **Sweated over, down to the pixel.**
 Real drag previews with shadows, folders that light up as valid drop targets, marquee box selection, Quick Look on `Space`, instant search on `Cmd+F` — the details that make a file manager feel like it belongs on your Mac.
 
-**Fluent in five languages.**
-English, Portuguese, Spanish, French, and German, detected automatically from your system language — switchable anytime.
+**Fluent in 15 languages.**
+Detected automatically from your system language — switchable anytime.
 
 ---
 
@@ -80,21 +80,7 @@ Wiles is built from the ground up for your Mac — not adapted from some other p
 **Small on disk. Light on battery.**
 No bundled browser hiding inside, no background processes dragging your fans on. Just a small app doing exactly what it's asked and nothing else.
 
-### Shortcuts Cheatsheet
-
-| Action | Shortcut |
-| :--- | :--- |
-| **Quick Look** | `Space` |
-| **Open Item** | `Double Click` or `Enter` (Quick) / `Cmd + Down` (Classic) |
-| **Rename Item(s)** | `F2` (Quick) / `Return` (Classic) |
-| **Go Up Directory** | `Backspace` (Quick) / `Cmd + Up` (Classic) |
-| **Disk Usage Visualizer** | `Cmd + Shift + D` |
-| **Focus Path Bar** | `Cmd + L` |
-| **In-Folder Search** | `Cmd + F` |
-| **Move to Trash** | `Cmd + Delete` or `Delete` |
-| **Copy / Cut / Paste** | `Cmd + C` / `Cmd + X` / `Cmd + V` |
-| **Toggle Hidden Files** | `Cmd + Shift + .` (Classic) / `Ctrl + H` (Quick) |
-| **Properties (Get Info)** | `Cmd + I` |
+Every shortcut is on display right inside the app — hit `Cmd + /` anytime to see the full list for however you like to move.
 
 ---
 
