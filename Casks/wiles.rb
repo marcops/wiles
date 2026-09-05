@@ -1,6 +1,6 @@
 cask "wiles" do
-  version "0.4.2"
-  sha256 "cb6390eaa2eac2f1601f1a77bc95072f713c347a22bec037e578fecdbc97ba42"
+  version "0.4.3"
+  sha256 "1bcdc2e2563c67329b55a46c24f2b20378744db55c1869aae95f8f8db82c61c2"
 
   url "https://github.com/marcops/wiles/releases/download/v#{version}/wiles-v#{version}.zip"
   name "Wiles"
@@ -11,8 +11,10 @@ cask "wiles" do
 
   app "Wiles.app"
 
-  postflight_steps do
-    run "xattr", args: ["-cr", "{{appdir}}/Wiles.app"], sudo: false
+  postflight do
+    system_command "xattr",
+                   args: ["-cr", "#{appdir}/Wiles.app"],
+                   sudo: false
   end
 
   zap trash: [
