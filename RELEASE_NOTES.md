@@ -1,5 +1,14 @@
 # Release Notes
 
+## Version 0.4.3
+
+### New Features:
+- **Reset Wiles to a Clean Look, or a Presentation-Ready One**: A new View menu ▸ Appearance submenu adds two one-click resets. "Default" restores every Wiles setting to how it was the very first time you opened the app. "Director View" does the same reset, then hides every sidebar section except Favorites (seeded with just Desktop, Home, Documents, and Downloads) — handy for recordings, demos, or screenshots.
+
+### Bug Fixes:
+- **Disk Usage Visualizer Could Show a File You Already Deleted**: The breakdown only refreshed when you navigated to a different folder, so deleting, pasting, or otherwise changing files in the folder it was showing left it stuck on stale data. It now updates immediately.
+- **Double-Clicking a Zip Extracted It Instead of Showing What's Inside**: Double-clicking an archive now opens the same "Inspect Contents" view as the right-click menu, instead of handing it off to extract automatically.
+
 ## Version 0.4.2
 
 ### Bug Fixes:
@@ -122,19 +131,9 @@
 - **List View Dates Now Have Leading Zeros**: Dates and times in the List View columns pad to two digits — 01/02/26 08:05 instead of 1/2/26 8:05 — while still following your region's date and time format.
 - **Sidebar Edge Behind the Window Buttons**: The strip behind the close/minimize/zoom buttons is now a soft translucent blur instead of a solid block, so a sidebar row scrolled to the very top stays faintly visible through it instead of disappearing.
 
-## Version 0.3.13
-
-### New Features:
-- **Remember Each Folder's Own View**: A new Advanced Settings option lets every folder remember whether you last viewed it as a Grid or a List, instead of one setting for the whole app.
-
-### Bug Fixes:
-- **Grid View Names Could Get Stuck Cut Off Instead of Wrapping**: A long file or folder name could stay squeezed onto one line with no way to read the rest, instead of wrapping onto a second line the way it's meant to. Fixed — names now wrap properly, and selecting an item to see its full name no longer gets cut off either.
-- **Grid View's Color Tags Could Be Hidden**: Color tags on a file or folder could end up hidden below the name instead of showing next to it.
-- **Sidebar's Folder Tree Could Still Get Stuck With No Way to Retry**: If the folder tree failed to load, there was no way to try again. A working "Retry" option now appears.
-- **Sidebar's Scrollbar Could Stay Visible Instead of Fading**: It no longer stays permanently visible when the sidebar isn't being scrolled.
-
 ## Earlier Highlights
 
+- **0.3.13**: Every folder can now remember whether you last viewed it as a Grid or a List.
 - **0.3.11**: Batch Rename gained a Regex mode alongside Find & Replace, Prefix & Suffix, and Sequence Number.
 
 ---
