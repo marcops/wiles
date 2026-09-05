@@ -6,7 +6,7 @@ Fast, focused, and built entirely for your Mac. No bloat, no compromises.
 
 Every window opens instantly. Every interaction feels considered. Every detail has been sweated over. A file manager that finally feels like it was made for your Mac. Because it was.
 
-![Wiles Screenshot](docs/screenshots/v0.0.9-hero.png)
+![Wiles Screenshot](docs/screenshots/v0.4.2-hero.png)
 
 ---
 
