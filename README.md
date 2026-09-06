@@ -11,6 +11,9 @@ Every window opens instantly. Every interaction feels considered. Every detail h
 ---
 
 ## What's New
+See every feature in detail, with screenshots in Light and Dark, in our Features guide!
+📸 **[Browse the Features](FEATURES.md)**
+
 Check out the latest features and updates in our Release Notes!
 👉 **[Read the Release Notes](RELEASE_NOTES.md)**
 
