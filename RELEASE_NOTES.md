@@ -1,5 +1,11 @@
 # Release Notes
 
+## Version 0.4.4
+
+### Bug Fixes:
+- **Some Status-Bar Text Didn't Follow a Language Change Right Away**: After you switched Wiles' language, the free-space amount in the status bar kept showing the previous language until you opened another folder. It now updates the moment you change the setting.
+- **Tag Colour Names Ignored the Language You Set in Wiles**: The names of the standard colour tags — shown in the sidebar, the path-bar pill, and the right-click Tags menu — followed your Mac's system language instead of the language you chose in Wiles. They now follow Wiles' own setting, while still acting on the very same tag your Mac uses.
+
 ## Version 0.4.3
 
 ### New Features:
@@ -122,17 +128,9 @@
 - **Settings Storage Split Into Focused Pieces**: The single object holding every saved preference is now separated into view, sidebar, search, appearance, and favorites groups, each next to the code that uses it — making future changes safer and smaller.
 - **Continued Internal Cleanup**: A large batch of code-review findings fixed — one shared implementation for the "Copy Path" submenu (previously written four times), one source of truth for which sidebar sections are shown, and a wide sweep of named constants, consolidated duplicated logic, and removed dead code across services, views, and error handling. A further round followed: one shared folder-tree component behind the sidebar and the folder pickers, one source of truth for every keyboard shortcut and its label, one shared list of image file types, and lighter work per row while scrolling large folders. And another: the background-operations tracker and the thumbnail prefetcher are now per-window (so two windows no longer interfere with each other's progress or thumbnail loading), a rapid smart-folder switch stops the old query's work instead of finishing it unused, and the Duplicate Finder lists groups and picks which copy to keep in a stable order. And a final sweep of about forty more findings: long-running background scans and merges now genuinely stop when you move on (via one shared cancellable-work helper); the terminate-time save of pending preferences is handled by one self-registering mechanism and from a single app-level hook rather than once per window; folder-watch setup and the recents check no longer touch the disk on the main thread during window creation; the recursive-permissions apply, the terminal focus check, and the HTTP response-header builder are each a single implementation with tests; and the "Open With" and Finder-tag caches refresh on the right system events instead of on a timer inside view drawing. And one more round: the safeguards behind replace-moves and archive extraction were hardened (see Bug Fixes above), the wait for an archive tool to finish is now interruptible through the same shared helper the rest of the background work uses, and a compatibility check was added so a future update to the terminal component can't quietly leave a shell process running.
 
-## Version 0.3.14
-
-### Bug Fixes:
-- **Tags Didn't Match the Ones on Your Mac**: The sidebar's Tags section and the right-click Tags menu used a fixed English list, so on a Mac set to another language the tag names and colours were wrong, and tagging a file in Wiles could create a separate tag from the one your Mac already uses. Wiles now reads your Mac's own tag names and colours, so both sides act on the same tag.
-
-### Refinements:
-- **List View Dates Now Have Leading Zeros**: Dates and times in the List View columns pad to two digits — 01/02/26 08:05 instead of 1/2/26 8:05 — while still following your region's date and time format.
-- **Sidebar Edge Behind the Window Buttons**: The strip behind the close/minimize/zoom buttons is now a soft translucent blur instead of a solid block, so a sidebar row scrolled to the very top stays faintly visible through it instead of disappearing.
-
 ## Earlier Highlights
 
+- **0.3.14**: Wiles reads your Mac's own tag names and colours, so tagging on both sides acts on the same tag; List View dates and times pad to two digits; the strip behind the window buttons became a soft blur so a top-scrolled sidebar row stays faintly visible.
 - **0.3.13**: Every folder can now remember whether you last viewed it as a Grid or a List.
 - **0.3.11**: Batch Rename gained a Regex mode alongside Find & Replace, Prefix & Suffix, and Sequence Number.
 
