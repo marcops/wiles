@@ -3,6 +3,7 @@
 ## Version 0.4.4
 
 ### Bug Fixes:
+- **Batch Rename Window Cut Off Its Title and Buttons**: The Batch Rename dialog wasn't tall enough for its own contents, so the title and the Cancel / Apply buttons were clipped at the top and bottom edges. It's now sized to fit, and the preview list uses the extra room.
 - **Some Status-Bar Text Didn't Follow a Language Change Right Away**: After you switched Wiles' language, the free-space amount in the status bar kept showing the previous language until you opened another folder. It now updates the moment you change the setting.
 - **Tag Colour Names Ignored the Language You Set in Wiles**: The names of the standard colour tags — shown in the sidebar, the path-bar pill, and the right-click Tags menu — followed your Mac's system language instead of the language you chose in Wiles. They now follow Wiles' own setting, while still acting on the very same tag your Mac uses.
 
