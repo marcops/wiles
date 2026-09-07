@@ -12,7 +12,7 @@ cask "wiles" do
   app "Wiles.app"
 
   postflight_steps do
-    run "xattr", args: ["-cr", "Wiles.app"], base: :appdir
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/Wiles.app"]
   end
 
   zap trash: [
