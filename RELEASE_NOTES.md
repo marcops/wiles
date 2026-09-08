@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 0.4.6
+
+### Refinements:
+- **Grid View Fits More of Each Name on a Line**: In Grid View, the name shown under each file and folder now uses a bit more of the width on either side, so roughly three to four more letters fit on a line before the name is shortened with an ellipsis. Names stay centred under their icon, and renaming one in place still lines up the same way.
+
 ## Version 0.4.5
 
 ### Bug Fixes:
@@ -30,16 +35,6 @@
 
 ### Refinements:
 - **Smart Folder Save Button's Icon Changed, Redundant Clear Button Removed**: The search bar's "save as smart folder" button now shows a save icon instead of a folder icon, and the separate "clear" button next to it was removed.
-
-## Version 0.4.1
-
-### Bug Fixes:
-- **Sidebar Directory Tree Could Freeze**: Expanding certain folders in the sidebar's directory tree could freeze it. Fixed.
-- **Sidebar's Scrollbar Could Disappear**: Expanding the directory tree deep enough could leave the sidebar with no visible scroll indicator, and scrolling with a mouse wheel (not a trackpad) could make it vanish and not come back until you collapsed and reopened a folder. The indicator now stays accurate through both.
-- **Opening a Folder That Keeps Changing Could Load Forever**: A folder receiving a steady stream of changes — an active download, a build writing into it — could keep restarting its listing over and over and never finish loading. It now finishes even while the folder keeps changing.
-- **Dragging a File Onto the Path Bar Had No Progress or Way to Cancel**: Fixed, matching other drag-and-drop destinations.
-- **Batch Rename Could Lose Already-Renamed Files If Interrupted**: Cancelling a batch rename partway through, or hitting an error, could discard files that had already been renamed successfully. They're now kept.
-- **Terminal Drawer Could Show a Stale Session After Reaching Its Restart Limit**: Fixed.
 
 ## Earlier Highlights
 
