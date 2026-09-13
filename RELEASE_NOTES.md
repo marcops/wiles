@@ -1,5 +1,22 @@
 # Release Notes
 
+## Upcoming (0.4.8)
+
+### Refinements:
+- **Trash Restore Now Says "Restoring…" Instead of a Generic "Undoing…"**: Undoing a "Move to Trash" gave no sign of what it was actually doing while it restored the file, which can take a couple of seconds for a large item — it just showed the same "Undoing…" every other undo uses. It now says "Restoring…" instead.
+
+## Version 0.4.7
+
+### New Features:
+- **Cmd+R Rename Shortcut**: You can now press Cmd+R to rename the selected file or folder, alongside the existing way of starting a rename.
+- **Hover to Expand the Grid/List View Switcher**: Hovering over the view-mode switcher in the corner now expands it right there, so you can pick Grid or List without an extra click.
+- **Type-Ahead Row Selection**: Typing a letter while browsing a folder now jumps to and selects the next matching row, in both Grid and List view.
+
+### Bug Fixes:
+- **Undoing "Move to Trash" Could Restore a File Under the Wrong Name**: If the Trash already had an item with the same name, undoing the move brought the file back under that collision-mangled name instead of its original one. It now always restores the original filename.
+- **Go to Folder Silently Did Nothing While a Search or Smart Folder Was Open**: Cmd+L's "Go to Folder" stopped responding while a search or a Smart Folder was active. It now works in both cases.
+- **Right-Clicking Inside a Multi-Selection Could Collapse It to One Item**: Right-clicking a row that was part of a multi-item selection sometimes reduced the selection down to just that row before the context menu opened, which broke Batch Rename and Merge to PDF when used on a real multi-selection. Fixed.
+
 ## Version 0.4.6
 
 ### Refinements:
@@ -17,30 +34,9 @@
 - **Some Status-Bar Text Didn't Follow a Language Change Right Away**: After you switched Wiles' language, the free-space amount in the status bar kept showing the previous language until you opened another folder. It now updates the moment you change the setting.
 - **Tag Colour Names Ignored the Language You Set in Wiles**: The names of the standard colour tags — shown in the sidebar, the path-bar pill, and the right-click Tags menu — followed your Mac's system language instead of the language you chose in Wiles. They now follow Wiles' own setting, while still acting on the very same tag your Mac uses.
 
-## Version 0.4.3
+---
 
-### New Features:
-- **Reset Wiles to a Clean Look, or a Presentation-Ready One**: A new View menu ▸ Appearance submenu adds two one-click resets. "Default" restores every Wiles setting to how it was the very first time you opened the app. "Director View" does the same reset, then hides every sidebar section except Favorites (seeded with just Desktop, Home, Documents, and Downloads) — handy for recordings, demos, or screenshots.
-
-### Bug Fixes:
-- **Disk Usage Visualizer Could Show a File You Already Deleted**: The breakdown only refreshed when you navigated to a different folder, so deleting, pasting, or otherwise changing files in the folder it was showing left it stuck on stale data. It now updates immediately.
-- **Double-Clicking a Zip Extracted It Instead of Showing What's Inside**: Double-clicking an archive now opens the same "Inspect Contents" view as the right-click menu, instead of handing it off to extract automatically.
-
-## Version 0.4.2
-
-### Bug Fixes:
-- **Terminal Could Keep Capturing Your Keystrokes After You Clicked Elsewhere**: With the integrated terminal open, clicking a file, a sidebar item, or empty space elsewhere in the window didn't hand keyboard control back — arrow keys, Delete, and other shortcuts kept going to the terminal instead. Clicking anywhere outside it now returns keyboard control right away; clicking the terminal again gives it back.
-- **Editing a Smart Folder's Search Didn't Save When You Clicked Away**: Opening a saved smart folder's search to tweak it, then clicking elsewhere, left the raw search text showing instead of collapsing back to the folder's name, and the edit wasn't saved. It now saves automatically and collapses back to the name.
-- **Directory Tree's Top Entry Wasn't Aligned With Its Section Title**: The sidebar's Directory Tree section showed its first entry (your drive) slightly out of line with the section's own arrow. Fixed.
-
-### Refinements:
-- **Smart Folder Save Button's Icon Changed, Redundant Clear Button Removed**: The search bar's "save as smart folder" button now shows a save icon instead of a folder icon, and the separate "clear" button next to it was removed.
-
-## Earlier Highlights
-
-- **0.3.14**: Wiles reads your Mac's own tag names and colours, so tagging on both sides acts on the same tag; List View dates and times pad to two digits; the strip behind the window buttons became a soft blur so a top-scrolled sidebar row stays faintly visible.
-- **0.3.13**: Every folder can now remember whether you last viewed it as a Grid or a List.
-- **0.3.11**: Batch Rename gained a Regex mode alongside Find & Replace, Prefix & Suffix, and Sequence Number.
+👉 For everything shipped before this, see [Features](FEATURES.md).
 
 ---
 
