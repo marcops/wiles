@@ -1,6 +1,10 @@
 # Release Notes
 
-## Upcoming (0.4.8)
+## Version 0.4.8
+
+### Bug Fixes:
+- **Choosing a Folder for Auto-Organization Could Freeze the Whole App**: Picking a folder several levels deep (or with an ancestor folder holding a lot of items) in the Auto-Organization folder browser could make Wiles stop responding for the scan's duration. It now scans in the background, keeping the app responsive.
+- **Browsing Could Momentarily Stall When Several Folders Loaded Icons at Once**: Opening multiple windows or navigating quickly could pile up icon-loading work faster than it was meant to run, occasionally making the app feel briefly stuck. Icon loading is now properly capped to run a few at a time as intended.
 
 ### Refinements:
 - **Trash Restore Now Says "Restoring…" Instead of a Generic "Undoing…"**: Undoing a "Move to Trash" gave no sign of what it was actually doing while it restored the file, which can take a couple of seconds for a large item — it just showed the same "Undoing…" every other undo uses. It now says "Restoring…" instead.
