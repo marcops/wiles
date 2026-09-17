@@ -1,5 +1,17 @@
 # Release Notes
 
+## Version 0.4.10
+
+### New Features:
+- **Minimize Wi-Fi Sharing Instead of Closing It**: The "Share Folder over Wi-Fi" window can now be minimized while sharing is active — sharing keeps running, and a Wi-Fi icon appears in the bottom status bar so you can reopen the window anytime. The window's main button is now "Stop & Close" instead of a plain "Close", so it's clear what it actually does.
+
+### Bug Fixes:
+- **Renaming in Grid View Could Show a Blank Extra Line**: Right after starting a rename in Grid View, the editable name box was often narrower than the label it replaced and could show one blank line even for short names that fit on one line just fine. It now matches the label's size and only grows when a name actually needs more room.
+- **Share Folder over Wi-Fi Window Could Cut Off Its Own Text**: This window had a fixed size that didn't always leave enough room for its content, sometimes cutting off the notice about the connection not being encrypted. It now sizes itself to whatever it's showing.
+
+### Refinements:
+- **Share Folder over Wi-Fi Now Explains the Username Prompt**: Connecting to a password-protected shared folder still asks for a username as well as a password — the window now notes that any username works, since only the password is checked.
+
 ## Version 0.4.9
 
 ### Bug Fixes:
@@ -33,11 +45,6 @@
 
 ### Refinements:
 - **Grid View Fits More of Each Name on a Line**: In Grid View, the name shown under each file and folder now uses a bit more of the width on either side, so roughly three to four more letters fit on a line before the name is shortened with an ellipsis. Names stay centred under their icon, and renaming one in place still lines up the same way.
-
-## Version 0.4.5
-
-### Bug Fixes:
-- **Grid View Rename Box Got Hidden a Few Seconds After Opening**: In Grid View, renaming a file or folder in place worked, but about three seconds in, the pop-up that shows a selected item's full name appeared on top of the rename box and covered it, so you could no longer see what you were typing. The full-name pop-up now stays out of the way while you're renaming. List View was never affected.
 
 ---
 
