@@ -1,5 +1,11 @@
 # Release Notes
 
+## Version 0.4.11
+
+### New Features:
+- **Shortcuts Are Now Fully Customizable**: Settings has a new Shortcuts tab. Pick Windows or Mac to use that platform's familiar keyboard shortcuts, or pick Custom and remap any shortcut yourself — click it in the list, press the new key combination, done. If a combination is already taken, Wiles asks before handing it over.
+- **One Complete Shortcuts List**: The quick reference sheet (`Cmd + /`) no longer splits shortcuts across separate Windows/Mac/All tabs — it's one list that always matches whatever's actually active, including your own Custom choices.
+
 ## Version 0.4.10
 
 ### New Features:
@@ -40,11 +46,6 @@
 - **Undoing "Move to Trash" Could Restore a File Under the Wrong Name**: If the Trash already had an item with the same name, undoing the move brought the file back under that collision-mangled name instead of its original one. It now always restores the original filename.
 - **Go to Folder Silently Did Nothing While a Search or Smart Folder Was Open**: Cmd+L's "Go to Folder" stopped responding while a search or a Smart Folder was active. It now works in both cases.
 - **Right-Clicking Inside a Multi-Selection Could Collapse It to One Item**: Right-clicking a row that was part of a multi-item selection sometimes reduced the selection down to just that row before the context menu opened, which broke Batch Rename and Merge to PDF when used on a real multi-selection. Fixed.
-
-## Version 0.4.6
-
-### Refinements:
-- **Grid View Fits More of Each Name on a Line**: In Grid View, the name shown under each file and folder now uses a bit more of the width on either side, so roughly three to four more letters fit on a line before the name is shortened with an ellipsis. Names stay centred under their icon, and renaming one in place still lines up the same way.
 
 ---
 

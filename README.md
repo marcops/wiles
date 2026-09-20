@@ -49,8 +49,8 @@ brew upgrade --cask wiles
 **Instant, by design.**
 Wiles opens the moment you click it — no splash screen, no spinner, no waiting around. Every interaction, from opening a folder of thousands of files to zooming your icon grid, is built to feel immediate.
 
-**Two ways to move. Both fully yours.**
-Prefer modifier keys? `Cmd+Down` opens, `Return` renames, `Cmd+Up` goes up. Prefer single-key speed? `Enter` opens, `F2` renames, `Backspace` goes up. Wiles adapts to how you move — switch anytime in Preferences.
+**Move your way — or make it entirely your own.**
+Prefer modifier keys? `Cmd+Down` opens, `Return` renames, `Cmd+Up` goes up. Prefer single-key speed? `Enter` opens, `F2` renames, `Backspace` goes up. Or pick Custom in Settings and remap any shortcut in the app yourself, one click and a keypress at a time.
 
 **See where your space went.**
 Hit `Cmd+Shift+D` and watch a visual, proportional breakdown of your biggest files and folders appear — instantly, with nothing to install and nothing to wait for.

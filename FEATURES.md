@@ -184,3 +184,11 @@ Switch between Light, Dark, or System appearance, tune sidebar and content trans
 | Light | Dark |
 | :---: | :---: |
 | ![Appearance Settings — Light](docs/screenshots/features/appearance-settings-light.png) | ![Appearance Settings — Dark](docs/screenshots/features/appearance-settings-dark.png) |
+
+## Shortcuts
+
+Settings has its own Shortcuts tab: pick Windows or Mac to use that platform's familiar keyboard shortcuts, or pick Custom to change any of them yourself. In Custom, click any shortcut in the list and press the new key combination you want — if it's already used elsewhere, Wiles asks before taking it over. The quick reference sheet (⌘/) always shows the complete list of shortcuts actually in effect, matching whichever mode you picked.
+
+| Light | Dark |
+| :---: | :---: |
+| ![Shortcuts — Light](docs/screenshots/features/shortcuts-light.png) | ![Shortcuts — Dark](docs/screenshots/features/shortcuts-dark.png) |
