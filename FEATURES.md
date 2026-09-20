@@ -22,6 +22,7 @@ A closer look at everything Wiles does, in both Light and Dark appearance.
 - [File Properties & Permissions](#file-properties--permissions)
 - [Undo/Redo](#undoredo)
 - [Appearance Settings](#appearance-settings)
+- [Shortcuts](#shortcuts)
 
 ---
 
