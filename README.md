@@ -100,3 +100,9 @@ Please submit all bug reports and feature proposals directly via **GitHub Issues
 ## 📄 License
 
 MIT License.
+
+---
+
+## 🤓 Source / Nerd Things
+
+Wiles is a native SwiftUI/AppKit app, built as a Swift Package. The app source, tests, and release pipeline live in [marcops/wiles-source](https://github.com/marcops/wiles-source).
