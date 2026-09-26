@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 0.5.0
+
+### Refinements:
+- **Bug Reports & Crash Reports Now Go Through a Dedicated Relay**: Sending feedback, filing a bug report, or an automatic crash report no longer talks to GitHub directly from the app — it now goes through a small relay we control instead. No change in what you see or do; it's just a safer path for your reports to reach us.
+
 ## Version 0.4.11
 
 ### New Features:
@@ -34,18 +39,6 @@
 
 ### Refinements:
 - **Trash Restore Now Says "Restoring…" Instead of a Generic "Undoing…"**: Undoing a "Move to Trash" gave no sign of what it was actually doing while it restored the file, which can take a couple of seconds for a large item — it just showed the same "Undoing…" every other undo uses. It now says "Restoring…" instead.
-
-## Version 0.4.7
-
-### New Features:
-- **Cmd+R Rename Shortcut**: You can now press Cmd+R to rename the selected file or folder, alongside the existing way of starting a rename.
-- **Hover to Expand the Grid/List View Switcher**: Hovering over the view-mode switcher in the corner now expands it right there, so you can pick Grid or List without an extra click.
-- **Type-Ahead Row Selection**: Typing a letter while browsing a folder now jumps to and selects the next matching row, in both Grid and List view.
-
-### Bug Fixes:
-- **Undoing "Move to Trash" Could Restore a File Under the Wrong Name**: If the Trash already had an item with the same name, undoing the move brought the file back under that collision-mangled name instead of its original one. It now always restores the original filename.
-- **Go to Folder Silently Did Nothing While a Search or Smart Folder Was Open**: Cmd+L's "Go to Folder" stopped responding while a search or a Smart Folder was active. It now works in both cases.
-- **Right-Clicking Inside a Multi-Selection Could Collapse It to One Item**: Right-clicking a row that was part of a multi-item selection sometimes reduced the selection down to just that row before the context menu opened, which broke Batch Rename and Merge to PDF when used on a real multi-selection. Fixed.
 
 ---
 
