@@ -7,6 +7,8 @@ cask "wiles" do
   desc "Ultra-fast modern macOS File Manager"
   homepage "https://github.com/marcops/wiles"
 
+  deprecate! date: "2026-11-07", because: "has moved to the Mac App Store"
+
   depends_on macos: :sonoma
 
   app "Wiles.app"

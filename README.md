@@ -19,16 +19,9 @@ Check out the latest features and updates in our Release Notes!
 
 ---
 
-## ⚡️ Quick Install (Homebrew & Direct DMG)
+## ⚡️ Quick Install (Direct DMG)
 
-### Option 1: Direct DMG Download (GUI)
 Download the **[Latest Release DMG](https://github.com/marcops/wiles/releases/latest)**, open it, and drag `Wiles.app` to `/Applications`.
-
-### Option 2: Homebrew Cask Terminal
-```bash
-brew tap marcops/wiles
-brew install --cask wiles
-```
 
 > **Note**: Wiles isn't distributed through the Mac App Store, so macOS may ask you to confirm you trust it the first time you open it.
 >
@@ -36,11 +29,6 @@ brew install --cask wiles
 > ```bash
 > xattr -cr /Applications/Wiles.app
 > ```
-
-To update anytime:
-```bash
-brew upgrade --cask wiles
-```
 
 ---
 
